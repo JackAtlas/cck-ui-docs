@@ -1,0 +1,12 @@
+.env
+.env.*
+.pnpm-store
+.vitepress/cache
+.vitepress/dist
+.vitepress/i18n/*
+.vitepress/crowdin/*
+!.vitepress/crowdin/en-US
+node_modules/
+public/llms.txt
+public/llms-full.txt
+temp
