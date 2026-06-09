@@ -34,7 +34,7 @@ jobs:
         uses: burnett01/rsync-deployments@7.0.1
         with:
           switches: -avz --delete
-          path: docs/.vitepress/dist
+          path: .vitepress/dist
           remote_path: ${{ secrets.DOCS_DEPLOY_PATH }}
           remote_host: ${{ secrets.DOCS_DEPLOY_HOST }}
           remote_user: ${{ secrets.DOCS_DEPLOY_USER }}
