@@ -28,7 +28,6 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build docs
-        working-directory: docs
         run: pnpm run build
 
       - name: Deploy to server via rsync
