@@ -16,7 +16,7 @@
   "dependencies": {
     "@lucide/vue": "^1.17.0",
     "@vueuse/core": "^14.3.0",
-    "cck-ui": "^0.0.5"
+    "cck-ui": "^0.0.6"
   },
   "devDependencies": {
     "sass": "^1.100.0",
