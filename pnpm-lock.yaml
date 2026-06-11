@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@cck-ui/hooks':
+        specifier: ^0.0.1
+        version: 0.0.1
       '@lucide/vue':
         specifier: ^1.17.0
         version: 1.17.0(vue@3.5.35)
@@ -15,8 +18,8 @@ importers:
         specifier: ^14.3.0
         version: 14.3.0(vue@3.5.35)
       cck-ui:
-        specifier: ^0.0.6
-        version: 0.0.6(vue@3.5.35)
+        specifier: ^0.0.8
+        version: 0.0.8(vue@3.5.35)
     devDependencies:
       sass:
         specifier: ^1.100.0
@@ -46,6 +49,9 @@ packages:
   '@babel/types@7.29.7':
     resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
     engines: {node: '>=6.9.0'}
+
+  '@cck-ui/hooks@0.0.1':
+    resolution: {integrity: sha512-jhLJRvQWkZJaNgYaHTFK4fqXtVyj0F1BDfGz/k7NgCnQsWLNCRODNd2wIYMeAvx722hD43E1E0X+fnxo7tmV6w==}
 
   '@docsearch/css@4.6.3':
     resolution: {integrity: sha512-nlOwcXcsNAptQl4vlL4MA78qNJKO0Qlds5GuBjCoePgkebTXLSf8Qt1oyZ3YBshYupKXG9VRGEsk1zr23d+bzQ==}
@@ -609,8 +615,8 @@ packages:
   birpc@2.6.1:
     resolution: {integrity: sha512-LPnFhlDpdSH6FJhJyn4M0kFO7vtQ5iPw24FnG0y21q09xC7e8+1LeR31S1MAIrDAHp4m7aas4bEkTDTvMAtebQ==}
 
-  cck-ui@0.0.6:
-    resolution: {integrity: sha512-OaveL2zAQivP9n3LGUHrF8okk9AWFxKejf+7utJhRhUPEIG0HNotaOkaCnpPggz5OpOwV8iutxAsXD9Vq+AR0A==}
+  cck-ui@0.0.8:
+    resolution: {integrity: sha512-/CcbaYziPkILvVkro4qkG3UBqHc//gpFu1NQmFnv6c5ekm+zqRH/ccFtM/cDLKp9wD4WDNOXnFK2JOibD6b45A==}
     peerDependencies:
       vue: ^3.5.0
 
@@ -901,6 +907,8 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
+
+  '@cck-ui/hooks@0.0.1': {}
 
   '@docsearch/css@4.6.3': {}
 
@@ -1295,7 +1303,7 @@ snapshots:
 
   birpc@2.6.1: {}
 
-  cck-ui@0.0.6(vue@3.5.35):
+  cck-ui@0.0.8(vue@3.5.35):
     dependencies:
       vue: 3.5.35
 
