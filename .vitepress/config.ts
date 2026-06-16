@@ -15,6 +15,7 @@ export default defineConfig({
       {
         text: 'Components',
         items: [
+          { text: 'Grid', link: '/en-US/component/grid.md' },
           { text: 'Button', link: '/en-US/component/button.md' },
           { text: 'Loader', link: '/en-US/component/loader.md' },
           { text: 'Icon', link: '/en-US/component/icon.md' }
