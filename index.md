@@ -14,8 +14,8 @@ hero:
       link: /en-US/component/button
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Dual-response system
+    details: Media Queries + Container Queries - for true component-level responsiveness.
   - title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Feature C
