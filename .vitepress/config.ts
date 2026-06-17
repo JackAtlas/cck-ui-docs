@@ -13,13 +13,16 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Components',
-        items: [
-          { text: 'Grid', link: '/en-US/component/grid.md' },
-          { text: 'Button', link: '/en-US/component/button.md' },
-          { text: 'Loader', link: '/en-US/component/loader.md' },
-          { text: 'Icon', link: '/en-US/component/icon.md' }
-        ]
+        text: 'Layout',
+        items: [{ text: 'Grid', link: '/en-US/component/grid.md' }]
+      },
+      {
+        text: 'Buttons',
+        items: [{ text: 'Button', link: '/en-US/component/button.md' }]
+      },
+      {
+        text: 'Feedback',
+        items: [{ text: 'Loader', link: '/en-US/component/loader.md' }]
       }
     ],
 
