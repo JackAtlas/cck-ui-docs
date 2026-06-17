@@ -304,3 +304,32 @@ import { CDefaultLoaders } from 'cck-ui'
 import CustomSpanLoader from '../../examples/loader/custom-span-loader.vue'
 import CustomSvgLoader from '../../examples/loader/custom-svg-loader.vue'
 </script>
+
+## API
+
+### Loader Props
+
+```typescript
+type CLoadersRecord = Partial<
+  Record<(string & {}) | 'bars' | 'dots' | 'oval', CLoaderComponent>
+>
+```
+
+| Name    | Type            | Description                                                                                                            | Default value        |
+| ------- | --------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| color   | CColor          | Keyof `theme.colors` or any valid CSS color                                                                            | `theme.primaryColor` |
+| loaders | CLoadersRecord  | Object of loaders components, can be customized via default props or inline.                                           | `"oval"`             |
+| size    | CSize \| number | Controls `width` and `height` of the loader. `Loader` has predefined `xs` - `xl` values. Numbers are converted to rem. | `'md'`               |
+
+### Loader Slots
+
+| Name    | Description                                 |
+| ------- | ------------------------------------------- |
+| default | Overrides default loader with given content |
+
+### Loader Expose
+
+| Name | Description         | Type                            |
+| ---- | ------------------- | ------------------------------- |
+| ref  | button html element | Ref<HTMLElement \| SVGElement\> |
+| size | size of loader      | CSize \| string \| number       |

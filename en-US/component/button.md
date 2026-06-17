@@ -5,6 +5,8 @@ lang: en-US
 
 # Button
 
+Button component to render button or link
+
 ## Variant
 
 <script setup>
@@ -604,3 +606,70 @@ onMounted(() => {
 })
 </script>
 ```
+
+## API
+
+### Button Props
+
+```typescript
+type ButtonVariant =
+  | 'default'
+  | 'filled'
+  | 'light'
+  | 'outline'
+  | 'dashed'
+  | 'transparent'
+  | 'white'
+  | 'subtle'
+  | 'gradient'
+```
+
+| Name         | Type                    | Description                                                                                         | Default value           |
+| ------------ | ----------------------- | --------------------------------------------------------------------------------------------------- | ----------------------- |
+| autoContrast | boolean                 | If set, adjusts text color based on background color for filled variant                             |                         |
+| color        | CColor                  | Key of `theme.colors` or any valid CSS color                                                        | `theme.primaryColor`    |
+| disabled     | boolean                 | Sets `disabled` attribute, applies disabled styles                                                  |                         |
+| fullWidth    | boolean                 | Sets `width: 100%`                                                                                  | `false`                 |
+| gradient     | CGradient               | Gradient configuration used for `variant="gradient"`                                                | `theme.defaultGradient` |
+| justify      | JustifyContent          | Sets `justify-content` of `inner` element, can be used to change distribution of sections and label | `'center'`              |
+| leftSection  | vue.Component           | Content on the left side of the button label                                                        |                         |
+| loaderProps  | LoaderProps             | Props added to the `loader` component (only visible when `loading` prop is set)                     |                         |
+| loading      | boolean                 | If set, the `Loader` component is displayed over the button                                         |                         |
+| radius       | CRadius\|number         | Key of `theme.radius` or any valid CSS value to set `border-radius`                                 | `theme.defaultRadius`   |
+| rightSection | vue.Component           | Content on the right side of the button label                                                       |                         |
+| size         | CSize                   | Controls button `height`, `font-size` and horizontal `padding`                                      | `'sm'`                  |
+| tag          | string \| vue.Component | Custom element tag                                                                                  | `'button'`              |
+| variant      | ButtonVariant           | Variant of button                                                                                   | `'default'`             |
+
+### Button Slots
+
+| Name          | Description                                   |
+| ------------- | --------------------------------------------- |
+| default       | Button content                                |
+| left-section  | Content on the left side of the button label  |
+| right-section | Content on the right side of the button label |
+
+### Button Expose
+
+| Name     | Type                                  | Description                |
+| -------- | ------------------------------------- | -------------------------- |
+| disabled | boolean                               | Whether button is disabled |
+| ref      | Ref<HTMLButtonElement /\>             | `<button />` html element  |
+| size     | CSize \| `compact-${CSize}` \| string | Button size                |
+| variant  | ButtonVariant                         | Variant of button          |
+
+### Button Group Props
+
+| Name        | Type                         | Description                                                                    | Default value  |
+| ----------- | ---------------------------- | ------------------------------------------------------------------------------ | -------------- |
+| borderWidth | string \| number             | `border-width` of the child `Button` components. Numbers are converted to rem. | `1`            |
+| orientation | `"horizontal" \| "vertical"` | Orientation of the group                                                       | `'horizontal'` |
+
+### Button Group Section Props
+
+| Name         | Type              | Description                                                               | Default value           |
+| ------------ | ----------------- | ------------------------------------------------------------------------- | ----------------------- |
+| autoContrast | boolean           | If set, adjusts text color based on background color for `filled` variant |                         |
+| gradient     | CGradient         | Gradient configuration used when `variant="gradient"`                     | `theme.defaultGradient` |
+| radius       | CRadius \| number | Key of `theme.radius` or any valid CSS value to set `border-radius`       | `theme.defaultRadius`   |
+| size         | ButtonSize        | Controls section `height`, `font-size` and horitontal `padding`           | `'sm'`                  |

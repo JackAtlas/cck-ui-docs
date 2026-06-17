@@ -5,6 +5,8 @@ lang: en-US
 
 # Grid
 
+Responsive 12 columns grid system
+
 ## Usage
 
 <c-grid>
@@ -583,19 +585,6 @@ If you need to support older browsers, use the default `type="media"` which uses
 
 Example with media queries (default):
 
-<c-grid gap="md">
-  <c-col :span="{ base: 12, md: 6 }">
-    <div class="item">
-      <div class="item-inner">1</div>
-    </div>
-  </c-col>
-  <c-col :span="{ base: 12, md: 6 }">
-    <div class="item">
-      <div class="item-inner">2</div>
-    </div>
-  </c-col>
-</c-grid>
-
 ```vue
 <template>
   <c-grid gap="md">
@@ -633,6 +622,9 @@ Example with container queries:
   padding: var(--c-spacing-md);
   background-color: var(--c-color-blue-0);
 }
+[data-c-color-scheme="dark"] .item {
+  background-color: var(--c-color-dark-4);
+}
 
 .item-inner {
   font-size: --c-font-size-xl;
@@ -640,4 +632,32 @@ Example with container queries:
   text-align: center;
   color: var(--c-color-blue-6);
 }
+[data-c-color-scheme="dark"] .item-inner {
+  color: var(--c-color-dimmed);
+}
 </style>
+
+## API
+
+### Grid props
+
+| Name        | Type                     | Description                                                        | Default value |
+| ----------- | ------------------------ | ------------------------------------------------------------------ | ------------- |
+| align       | AlignItems               | Sets `align-items`                                                 | `stretch`     |
+| breakpoints | GridBreakpoints          | Breakpoints values, only used with `type="container"`              |               |
+| columnGap   | StyleProp<CSpacing\>     | Column gap, overrides `gap` for horizontal spacing                 |               |
+| columns     | NumberLikeString         | Number of columns in each row                                      | `12`          |
+| grow        | boolean                  | If set, columns in the last row expand to fill all available space | `false`       |
+| justify     | JustifyContent           | Sets `justify-content`                                             | `flex-start`  |
+| overflow    | Overflow                 | Sets `overflow` CSS property on the root element                   | `'visible'`   |
+| rowGap      | StyleProp<CSpacing\>     | Row gap, overrides `gap` for vertical spacing                      |               |
+| type        | `"media" \| "container"` | Type of queries used for responsive styles                         | `'media'`     |
+
+### Col props
+
+| Name   | Type                         | Description                                                      | Default value |
+| ------ | ---------------------------- | ---------------------------------------------------------------- | ------------- |
+| align  | StyleProp<AlignSelf\>        | Vertical alignment of the column `align-self` CSS property       |               |
+| offset | StyleProp<NumberLikeString\> | Column start offset - number of empty columns before this column |               |
+| order  | StyleProp<NumberLikeString\> | Column order, use to reorder columns at different viewport sizes |               |
+| span   | StyleProp<ColSpan\>          | Column span                                                      | `12`          |
