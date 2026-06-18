@@ -7,24 +7,32 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Components', link: '/en-US/component/button.md' }
+      { text: 'Guide', link: '/en-US/guide/cck-ui' },
+      { text: 'Components', link: '/en-US/component/button' }
     ],
 
-    sidebar: [
-      {
-        text: 'Layout',
-        items: [{ text: 'Grid', link: '/en-US/component/grid.md' }]
-      },
-      {
-        text: 'Buttons',
-        items: [{ text: 'Button', link: '/en-US/component/button.md' }]
-      },
-      {
-        text: 'Feedback',
-        items: [{ text: 'Loader', link: '/en-US/component/loader.md' }]
-      }
-    ],
+    sidebar: {
+      '/en-US/guide/': [
+        {
+          text: 'Introduction',
+          items: [{ text: 'Welcome to CCK UI', link: '/en-US/guide/cck-ui' }]
+        }
+      ],
+      '/en-US/component/': [
+        {
+          text: 'Layout',
+          items: [{ text: 'Grid', link: '/en-US/component/grid' }]
+        },
+        {
+          text: 'Buttons',
+          items: [{ text: 'Button', link: '/en-US/component/button' }]
+        },
+        {
+          text: 'Feedback',
+          items: [{ text: 'Loader', link: '/en-US/component/loader' }]
+        }
+      ]
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/JackAtlas/cck-ui' }
