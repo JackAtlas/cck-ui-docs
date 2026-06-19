@@ -21,7 +21,10 @@ export default defineConfig({
       '/en-US/component/': [
         {
           text: 'Layout',
-          items: [{ text: 'Grid', link: '/en-US/component/grid' }]
+          items: [
+            { text: 'Grid', link: '/en-US/component/grid' },
+            { text: 'SimpleGrid', link: '/en-US/component/simple-grid' }
+          ]
         },
         {
           text: 'Buttons',
