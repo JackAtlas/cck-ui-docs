@@ -18,8 +18,8 @@ importers:
         specifier: ^14.3.0
         version: 14.3.0(vue@3.5.35)
       cck-ui:
-        specifier: ^0.1.0
-        version: 0.1.0(vue@3.5.35)
+        specifier: ^0.2.0
+        version: 0.2.0(vue@3.5.35)
     devDependencies:
       sass:
         specifier: ^1.100.0
@@ -615,8 +615,8 @@ packages:
   birpc@2.6.1:
     resolution: {integrity: sha512-LPnFhlDpdSH6FJhJyn4M0kFO7vtQ5iPw24FnG0y21q09xC7e8+1LeR31S1MAIrDAHp4m7aas4bEkTDTvMAtebQ==}
 
-  cck-ui@0.1.0:
-    resolution: {integrity: sha512-6ONzqVde9bk073JK/jqjG5x7xzRGjYC8dc7WbEO6A3amPnmMpEi5/C1+Zzm8g1pfr16T37pP4bD9XDqNVhM9WQ==}
+  cck-ui@0.2.0:
+    resolution: {integrity: sha512-lWuJCqekQmt5PzTDh2e5J7V6wfGR4CS4xyA6WsnU/ETpglNIygAtfBUOp7oeisOrfS2p0HlB8CWsxChpJJzb3w==}
     peerDependencies:
       vue: ^3.5.0
 
@@ -1303,7 +1303,7 @@ snapshots:
 
   birpc@2.6.1: {}
 
-  cck-ui@0.1.0(vue@3.5.35):
+  cck-ui@0.2.0(vue@3.5.35):
     dependencies:
       vue: 3.5.35
 
