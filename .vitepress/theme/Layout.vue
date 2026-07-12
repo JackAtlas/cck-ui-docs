@@ -1,8 +1,11 @@
 <template>
-  <DefaultTheme.Layout />
+  <CckConfigProvider>
+    <DefaultTheme.Layout />
+  </CckConfigProvider>
 </template>
 
 <script setup lang="ts">
+import { CckConfigProvider } from '@cck-ui/core'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { onMounted, watch } from 'vue'
