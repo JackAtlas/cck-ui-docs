@@ -109,12 +109,12 @@ The `Loader` component is used in other components. You can change the loader ty
 
 Note that in order for the `size` and `color` props to work with custom loaders, you need to use the `--loader-size` and `--loader-color` CSS variables in your loader styles.
 
-<div>
+<!-- <div>
   <c-loader
     type="custom"
     :loaders="{ ...CDefaultLoaders, custom: CustomSpanLoader }"
   ></c-loader>
-</div>
+</div> -->
 
 ```vue
 <template>
@@ -180,12 +180,12 @@ It is recommended to use CSS-only loaders, as SVG-based animations may have the 
 
 In your SVG loader, you need to use the `--loader-size` and `--loader-color` variables the same way as in CSS-only custom loaders in order for the `size` and `color` props to work. Usually, you would need to set `width` and `height` to `var(--loader-size)` and `fill / stroke` to `var(--loader-color)`.
 
-<div>
+<!-- <div>
   <c-loader
     type="custom"
     :loaders="{ ...CDefaultLoaders, custom: CustomSvgLoader }"
   ></c-loader>
-</div>
+</div> -->
 
 ```vue
 <template>
@@ -300,7 +300,7 @@ const loaderClass = ns.e('root')
 ```
 
 <script setup lang="ts">
-import { CDefaultLoaders } from 'cck-ui'
+import { CDefaultLoaders } from '@cck-ui/core'
 import CustomSpanLoader from '../../examples/loader/custom-span-loader.vue'
 import CustomSvgLoader from '../../examples/loader/custom-svg-loader.vue'
 </script>
