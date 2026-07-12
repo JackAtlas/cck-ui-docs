@@ -8,6 +8,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Guide', link: '/en-US/guide/cck-ui' },
+      { text: 'Theming & Styles', link: '/en-US/theming/cck-config-provider' },
       { text: 'Components', link: '/en-US/component/button' }
     ],
 
@@ -15,7 +16,21 @@ export default defineConfig({
       '/en-US/guide/': [
         {
           text: 'Introduction',
-          items: [{ text: 'Welcome to CCK UI', link: '/en-US/guide/cck-ui' }]
+          items: [
+            { text: 'Welcome to CCK UI', link: '/en-US/guide/cck-ui' },
+            { text: 'Browser support', link: '/en-US/guide/browser-support' }
+          ]
+        }
+      ],
+      '/en-US/theming/': [
+        {
+          text: 'Theming',
+          items: [
+            { text: 'CckConfigProvider', link: '/en-US/theming/cck-config-provider' },
+            { text: 'Theme object', link: '/en-US/theming/theme-object' },
+            { text: 'Color', link: '/en-US/theming/colors' },
+            { text: 'Color scheme', link: '/en-US/theming/color-schemes' }
+          ]
         }
       ],
       '/en-US/component/': [
@@ -23,6 +38,7 @@ export default defineConfig({
           text: 'Layout',
           items: [
             { text: 'Grid', link: '/en-US/component/grid' },
+            { text: 'Group', link: '/en-US/component/group' },
             { text: 'SimpleGrid', link: '/en-US/component/simple-grid' }
           ]
         },
@@ -33,6 +49,14 @@ export default defineConfig({
         {
           text: 'Feedback',
           items: [{ text: 'Loader', link: '/en-US/component/loader' }]
+        },
+        {
+          text: 'Typography',
+          items: [{text: 'Text', link: '/en-US/component/text'}]
+        },
+        {
+          text: 'Miscellaneous',
+          items: [{text: 'Box', link: '/en-US/component/box'}]
         }
       ]
     },
