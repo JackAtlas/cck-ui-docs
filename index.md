@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Get started
-      link: /markdown-examples
+      link: /en-US/guide/cck-ui
     - theme: alt
       text: Components
       link: /en-US/component/button
