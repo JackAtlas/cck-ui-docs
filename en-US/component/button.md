@@ -7,20 +7,67 @@ lang: en-US
 
 Button component to render button or link
 
-## Variant
+### Variant
 
 <script setup>
 import { ChevronDownIcon, ChevronRightIcon, ChevronUpIcon, DownloadIcon, ImageIcon } from '@lucide/vue'
-import { h } from 'vue'
+import { h, ref } from 'vue'
+import { darken, defaultVariantColorsResolver, parseThemeColor, rgba } from '@cck-ui/core'
 
 const downloadIcon = h(DownloadIcon, { size: 14 })
+
+const variantColorResolver = (input) => {
+  const defaultResolvedColors = defaultVariantColorsResolver(input)
+  const parsedColor = parseThemeColor({
+    color: input.color || input.theme.primaryColor,
+    theme: input.theme
+  })
+
+  if (parsedColor.isThemeColor && parsedColor.color === 'lime' && input.variant === 'filled') {
+    return {
+      ...defaultResolvedColors,
+      color: 'var(--c-color-black)',
+      hoverColor: 'var(--c-color-black)'
+    }
+  }
+
+  if (input.variant === 'light') {
+    return {
+      background: rgba(parsedColor.value, 0.1),
+      hover: rgba(parsedColor.value, 0.15),
+      border: `1px solid ${parsedColor.value}`,
+      color: darken(parsedColor.value, 0.1)
+    }
+  }
+
+  if (input.variant === 'danger') {
+    return {
+      background: 'var(--c-color-red-9)',
+      hover: 'var(--c-color-red-8)',
+      color: 'var(--c-color-white)',
+      border: 'none'
+    }
+  }
+
+  return defaultResolvedColors
+}
+
+const count = ref(123)
+const increment = () => {
+  count.value += 1
+}
+const decrement = () => {
+  count.value -= 1
+}
 </script>
 
-<style scoped>
-.custom-button:disabled,
-.custom-button[data-disabled] {
-  border-color: light-dark(var(--c-color-gray-3), var(--c-color-dark-4));
-  background-color: transparent;
+<style module>
+.button {
+  &:disabled,
+  &[data-disabled] {
+    border-color: light-dark(var(--c-color-gray-3), var(--c-color-dark-4));
+    background-color: transparent;
+  }
 }
 </style>
 
@@ -35,22 +82,18 @@ const downloadIcon = h(DownloadIcon, { size: 14 })
 </div>
 
 ```vue
-<c-button>Default</c-button>
-
-<c-button variant="filled">Filled</c-button>
-
-<c-button variant="light">Light</c-button>
-
-<c-button variant="outline">Outline</c-button>
-
-<c-button variant="subtle">Subtle</c-button>
-
-<c-button variant="transparent">Transparent</c-button>
-
-<c-button variant="white">White</c-button>
+<template>
+  <c-button>Default</c-button>
+  <c-button variant="filled">Filled</c-button>
+  <c-button variant="light">Light</c-button>
+  <c-button variant="outline">Outline</c-button>
+  <c-button variant="subtle">Subtle</c-button>
+  <c-button variant="transparent">Transparent</c-button>
+  <c-button variant="white">White</c-button>
+</template>
 ```
 
-## Color
+### Color
 
 Default theme includes several color presets. And custom color is acceptable.
 
@@ -203,32 +246,32 @@ Default theme includes several color presets. And custom color is acceptable.
 </div>
 
 ```vue
-<!-- Preset color -->
-<c-button variant="filled" color="dark">Dark</c-button>
+<template>
+  <!-- Preset color -->
+  <c-button variant="filled" color="dark">Dark</c-button>
+  <c-button variant="filled" color="gray">Gray</c-button>
+  <!-- ... -->
 
-<c-button variant="filled" color="gray">Gray</c-button>
-<!-- ... -->
-
-<!-- Custom color -->
-<c-button variant="filled" color="skyblue">Custom</c-button>
-
-<c-button variant="filled" color="rgba(148, 22, 22, 1)">Custom</c-button>
-<!-- ... -->
+  <!-- Custom color -->
+  <c-button variant="filled" color="skyblue">Custom</c-button>
+  <c-button variant="filled" color="rgba(148, 22, 22, 1)">Custom</c-button>
+  <!-- ... -->
+ </template>
 ```
 
-## Full width
+### Full width
 
 If the `fullWidth` props is set, the `Button` will take 100% of the parent width:
 
 <div>
-  <c-button fullWidth>Full width button</c-button>
+  <c-button full-width>Full width button</c-button>
 </div>
 
 ```vue
-<c-button fullWidth>Full width button</c-button>
+<c-button full-width>Full width button</c-button>
 ```
 
-## Left and right sections
+### Left and right sections
 
 `left-section` and `right-section` allow adding icons or any other element to the left and right sides of the button. When a section is added, padding on the corresponding side is reduced. Both slot and prop are acceptable.
 
@@ -239,8 +282,8 @@ If the `fullWidth` props is set, the `Button` will take 100% of the parent width
     </template>
     Gallery
   </c-button>
-  <c-button :right-section="downloadIcon">Download</c-button>
-  <c-button>
+  <c-button variant="filled" :right-section="downloadIcon">Download</c-button>
+  <c-button variant="light">
     <template #left-section>
       <ImageIcon size="14" />
     </template>
@@ -283,14 +326,14 @@ const downloadIcon = h(DownloadIcon, { size: 14 }) // or jsx
 
 (**WIP**) Note that `left-section` and `right-section` are flipped in RTL mode (`left-section` is displayed on the right and `right-section` is displayed on the left).
 
-## Sections position
+### Sections position
 
 The `justify` prop sets the `justify-content` of the `inner` element. You can use it to change the alignment of left and right sections. For example, to spread them across the button, set `justify="space-between"`.
 
 If you need to align just one section to the side of the button, set `justify` to `space-between` and add an empty `<span />` to the opposite section.
 
 <div style="display:flex;flex-direction:column;gap:12px;">
-  <c-button justify="space-between" fullWidth>
+  <c-button justify="space-between" full-width>
     <template #left-section>
       <ImageIcon size="14" />
     </template>
@@ -299,25 +342,25 @@ If you need to align just one section to the side of the button, set `justify` t
       <ImageIcon size="14" />
     </template>
   </c-button>
-  <c-button justify="space-between" fullWidth>
+  <c-button justify="space-between" full-width>
     <template #left-section>
       <ImageIcon size="14" />
     </template>
     Button label
   </c-button>
-  <c-button justify="start" fullWidth>
+  <c-button justify="start" full-width>
     Button label
     <template #left-section>
       <ImageIcon size="14" />
     </template>
   </c-button>
-  <c-button justify="end" fullWidth>
+  <c-button justify="end" full-width>
     Button label
     <template #right-section>
       <ImageIcon size="14" />
     </template>
   </c-button>
-  <c-button justify="space-between" fullWidth>
+  <c-button justify="space-between" full-width>
     <template #left-section>
       <span></span>
     </template>
@@ -329,72 +372,93 @@ If you need to align just one section to the side of the button, set `justify` t
 </div>
 
 ```vue
-<c-button justify="space-between" fullWidth>
-  <template #left-section>
-    <ImageIcon size="14" />
-  </template>
-  Button label
-  <template #right-section>
-    <ImageIcon size="14" />
-  </template>
-</c-button>
+<template>
+  <c-button justify="space-between" full-width>
+    <template #left-section>
+      <ImageIcon size="14" />
+    </template>
+    Button label
+    <template #right-section>
+      <ImageIcon size="14" />
+    </template>
+  </c-button>
 
-<c-button justify="space-between" fullWidth>
-  <template #left-section>
-    <ImageIcon size="14" />
-  </template>
-  Button label
-</c-button>
+  <c-button justify="space-between" full-width>
+    <template #left-section>
+      <ImageIcon size="14" />
+    </template>
+    Button label
+  </c-button>
 
-<c-button justify="start" fullWidth>
-  Button label
-  <template #left-section>
-    <ImageIcon size="14" />
-  </template>
-</c-button>
+  <c-button justify="start" full-width>
+    Button label
+    <template #left-section>
+      <ImageIcon size="14" />
+    </template>
+  </c-button>
 
-<c-button justify="end" fullWidth>
-  Button label
-  <template #right-section>
-    <ImageIcon size="14" />
-  </template>
-</c-button>
+  <c-button justify="end" full-width>
+    Button label
+    <template #right-section>
+      <ImageIcon size="14" />
+    </template>
+  </c-button>
 
-<c-button justify="space-between" fullWidth>
-  <template #left-section>
-    <span></span>
-  </template>
-  Button label
-  <template #right-section>
-    <ImageIcon size="14" />
-  </template>
-</c-button>
+  <c-button justify="space-between" full-width>
+    <template #left-section>
+      <span></span>
+    </template>
+    Button label
+    <template #right-section>
+      <ImageIcon size="14" />
+    </template>
+  </c-button>
+</template>
 ```
 
-## Size
+### Size
 
 `Button` support `xs` - `xl` and `compact-xs` - `compact-xl` sizes. `compact` sizes have the same font size as `xs` - `xl` but with reduced padding and height.
 
-<div style="display:flex;gap:12px;align-items:center;">
+<c-group>
   <c-button size="xs">Regular xs</c-button>
   <c-button size="sm">Regular sm</c-button>
   <c-button size="md">Regular md</c-button>
   <c-button size="lg">Regular lg</c-button>
   <c-button size="xl">Regular xl</c-button>
-</div>
-<div style="display:flex;gap:12px;align-items:center;margin-top:12px;">
+</c-group>
+<c-group :mt="12">
   <c-button size="compact-xs">Compact xs</c-button>
   <c-button size="compact-sm">Compact sm</c-button>
   <c-button size="compact-md">Compact md</c-button>
   <c-button size="compact-lg">Compact lg</c-button>
   <c-button size="compact-xl">Compact xl</c-button>
-</div>
+</c-group>
 
-## Gradient variant
+```vue
+<template>
+  <c-group>
+    <c-button size="xs">Regular xs</c-button>
+    <c-button size="sm">Regular sm</c-button>
+    <c-button size="md">Regular md</c-button>
+    <c-button size="lg">Regular lg</c-button>
+    <c-button size="xl">Regular xl</c-button>
+  </c-group>
+  <c-group :mt="12">
+    <c-button size="compact-xs">Compact xs</c-button>
+    <c-button size="compact-sm">Compact sm</c-button>
+    <c-button size="compact-md">Compact md</c-button>
+    <c-button size="compact-lg">Compact lg</c-button>
+    <c-button size="compact-xl">Compact xl</c-button>
+  </c-group>
+</template>
+```
+
+### Gradient variant
 
 When the `variant` prop is set to `gradient`, you can control the gradient with the `gradient` prop, which accepts an object with `form`,`to` and `deg` properties. If the `gradient` props is not set, `Button` will use `theme.defaultGradient` which can be configured on the theme object. The `gradient` prop is ignored when `variant` is not `gradient`.
 
-**WIP** Note that `variant="gradient"` supports only linear gradients with two colors. If you need a more complex gradient, use the Styles API to modify `Button` styles.
+(**WIP**) Note that `variant="gradient"` supports only linear gradients with two colors. If you need a more complex gradient, use the Styles API to modify `Button` styles.
 
 <div style="display:flex;gap:12px;">
   <c-button variant="gradient">Gradient button</c-button>
@@ -418,7 +482,7 @@ When the `variant` prop is set to `gradient`, you can control the gradient with 
 >Gradient button</c-button>
 ```
 
-## Disabled state
+### Disabled state
 
 To make a `Button` disabled, set the `disabled` prop. This will prevent any interactions with the button and add disabled styles. If you want the button to just look disabled but still be interactive, set the `data-disabled` prop instead. Note that disabled styles are the same for all variants.
 
@@ -426,7 +490,7 @@ To make a `Button` disabled, set the `disabled` prop. This will prevent any inte
   <c-button disabled>Disabled button</c-button>
 </div>
 
-## Disabled state when Button is link
+### Disabled state when Button is link
 
 The `<a />` element does not support the `disabled` attribute. To make a `Button` disabled when it is rendered as a link, set the `data-disabled` attribute instead and prevent default behavior in the `@click` event handler.
 
@@ -445,58 +509,158 @@ The `<a />` element does not support the `disabled` attribute. To make a `Button
 >Disabled button</c-button>
 ```
 
-## Customize disabled styles
+### Customize disabled styles
 
 To customize disabled styles, it is recommended to use both `&:disabled` and `&[data-disabled]` selectors:
 
 - `&:disabled` is used to style the button when the `disabled` prop is set and also when the button is disabled by the parent component (for example, when the `disabled` prop is set on a `<fieldset />` element which contains the `Button`).
 - `&[data-disabled]` is used to style the button when it is not actually disabled but should look like it is (for example, `data-disabled` should be used if you need to use Tooltip with a disabled `Button` or when the `Button` is used as a link).
 
-<c-button class="custom-button" disabled>Disabled with styles</c-button>
+<c-button :className="$style.button" disabled>Disabled with styles</c-button>
 
 ```vue
 <template>
-  <c-button class="custom-button" disabled>Disabled with styles</c-button>
+  <c-button :className="$style.button" disabled>Disabled with styles</c-button>
 </template>
 
-<style scoped>
-.custom-button:disabled,
-.custom-button[data-disabled] {
-  border-color: light-dark(var(--c-color-gray-3), var(--c-color-dark-4));
-  background-color: transparent;
+<style module>
+.button {
+  &:disabled,
+  &[data-disabled] {
+    border-color: light-dark(var(--c-color-gray-3), var(--c-color-dark-4));
+    background-color: transparent;
+  }
 }
 </style>
 ```
 
-## Disabled button with Tooltip (WIP)
+### Disabled button with Tooltip (WIP)
 
 The `onMouseLeave` event is not triggered when a `Button` is disabled, so if you need to use a Tooltip with a disabled `Button`, you need to set the `data-disabled` prop on the `Button` instead of `disabled`. Note that it is also required to change the `onClick` event library to `(event) => event.preventDefault()` as the `Button` is not actually disabled and will still trigger the `onClick` event.
 
-## Loading state (WIP)
+### Loading state
 
 When the `loading` prop is set, the `Button` will be disabled and a Loader with overlay will be rendered in the center of the button. Loader color depends on the `Button` variant.
 
-<div style="display:flex;gap:12px;">
+<c-group>
   <c-button variant="filled" loading>Filled button</c-button>
   <c-button variant="light" loading>Light button</c-button>
   <c-button variant="outline" loading>Outline button</c-button>
-</div>
+</c-group>
 
-## Loader props (WIP)
+```vue
+<template>
+  <c-group>
+    <c-button loading variant="filled">Filled button</c-button>
+    <c-button loading variant="light">Light button</c-button>
+    <c-button loading variant="outline">Outline button</c-button>
+  </c-group>
+</template>
+```
+
+### Loader props
 
 You can customize the Loader with the `loaderProps` prop, which accepts all props that the Loader component has.
 
-## Custom variants (WIP)
+<c-button loading :loader-props="{ type: 'dots' }">Loading button</c-button>
 
-To add new `Button` variants, use the data-variant attribute. Usually the new variants are added to the theme, this way they are available in all components that support variant prop in your application.
+```vue
+<template>
+  <c-button loading :loader-props="{ type: 'dots' }">Loading button</c-button>
+</template>
+```
 
-## Auto contrast (WIP)
+### Styles API (WIP)
+
+### Custom variants (WIP)
+
+To add new `Button` variants, use the data-variant attribute. Usually the new variants are added to the theme, this way they are available in all `c-button` components in your application.
+
+### Custom variant colors
+
+You can customize colors for `c-button` and other component variants by adding variantColorResolver to your theme.
+
+<cck-config-provider :theme="{ variantColorResolver }">
+  <c-group>
+    <c-button color="lime.4" variant="filled">Lime filled button</c-button>
+    <c-button color="orange" variant="light">Orange light button</c-button>
+    <c-button variant="danger">Danger button</c-button>
+  </c-group>
+</cck-config-provider>
+
+```vue
+<template>
+  <cck-config-provider :theme="{ variantColorResolver }">
+    <c-group>
+      <c-button color="lime.4" variant="filled">Lime filled button</c-button>
+      <c-button color="orange" variant="light">Orange light button</c-button>
+      <c-button variant="danger">Danger button</c-button>
+    </c-group>
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { darken, defaultVariantColorsResolver, parseThemeColor, rgba } from '@cck-ui/core'
+
+const variantColorResolver = (input) => {
+  const defaultResolvedColors = defaultVariantColorsResolver(input)
+  const parsedColor = parseThemeColor({
+    color: input.color || input.theme.primaryColor,
+    theme: input.theme
+  })
+
+  if (parsedColor.isThemeColor && parsedColor.color === 'lime' && input.variant === 'filled') {
+    return {
+      ...defaultResolvedColors,
+      color: 'var(--c-color-black)',
+      hoverColor: 'var(--c-color-black)'
+    }
+  }
+
+  if (input.variant === 'light') {
+    return {
+      background: rgba(parsedColor.value, 0.1),
+      hover: rgba(parsedColor.value, 0.15),
+      border: `1px solid ${parsedColor.value}`,
+      color: darken(parsedColor.value, 0.1)
+    }
+  }
+
+  if (input.variant === 'danger') {
+    return {
+      background: 'var(--c-color-red-9)',
+      hover: 'var(--c-color-red-8)',
+      color: 'var(--c-color-white)',
+      border: 'none'
+    }
+  }
+
+  return defaultResolvedColors
+}
+</script>
+```
+
+### Auto contrast
 
 `Button` supports the `auto-contrast` prop and theme.autoContrast. If `autoContrast` is set either on `Button` or on the theme, the content color will be ajusted to have sufficient contrast with the value specified in the `color` prop.
 
 Note that the `auto-contrast` feature works only if you use the `color` prop to change the background color. `auto-contrast` works only with the `filled` variant.
 
-## Button group
+<c-group>
+  <c-button color="lime.4" variant="filled">Default</c-button>
+  <c-button color="lime.4" variant="filled" auto-contrast>Auto contrast</c-button>
+</c-group>
+
+```vue
+<template>
+  <c-group>
+    <c-button color="lime.4" variant="filled">Default</c-button>
+    <c-button color="lime.4" variant="filled" auto-contrast>Auto contrast</c-button>
+  </c-group>
+</template>
+```
+
+### Button group
 
 <div style="display:flex; flex-direction:column; align-items: center; gap: 12px;">
   <c-button-group>
@@ -513,83 +677,77 @@ Note that the `auto-contrast` feature works only if you use the `color` prop to 
 </div>
 
 ```vue
-<c-button-group>
-  <c-button>Left</c-button>
-  <c-button>Center</c-button>
-  <c-button>Right</c-button>
-</c-button-group>
+<template>
+  <c-button-group>
+    <c-button>Left</c-button>
+    <c-button>Center</c-button>
+    <c-button>Right</c-button>
+  </c-button-group>
 
-<c-button-group orientation="vertical">
-  <c-button>Top</c-button>
-  <c-button>Middle</c-button>
-  <c-button>Bottom</c-button>
-</c-button-group>
+  <c-button-group orientation="vertical">
+    <c-button>Top</c-button>
+    <c-button>Middle</c-button>
+    <c-button>Bottom</c-button>
+  </c-button-group>
+</template>
 ```
 
 Note that you must not wrap child `c-button` components with any additional elements.
 
 ```vue
-<c-button-group>
-  <div>
-    <c-button>This will not work</c-button>
-  </div>
-  <c-button>Buttons will have incorrect borders</c-button>
-</c-button-group>
+<template>
+  <c-button-group>
+    <div>
+      <c-button>This will not work</c-button>
+    </div>
+    <c-button>Buttons will have incorrect borders</c-button>
+  </c-button-group>
+</template>
 ```
 
-## Button group section
+### Button group section
 
-<div style="display: flex; justify-content: center; gap: 12px">
-  <c-button-group>
-    <c-button-group-section variant="filled">123</c-button-group-section>
-    <c-button>
-      <chevron-up-icon color="var(--c-color-teal-text)" />
-    </c-button>
-  </c-button-group>
-  <c-button-group>
-    <c-button>
-      <chevron-down-icon color="var(--c-color-red-text)" />
-    </c-button>
-    <c-button-group-section>123</c-button-group-section>
-    <c-button>
-      <chevron-up-icon color="var(--c-color-teal-text)" />
-    </c-button>
-  </c-button-group>
-  <c-button-group>
-    <c-button>
-      <chevron-down-icon color="var(--c-color-red-text)" />
-    </c-button>
-    <c-button-group-section>123</c-button-group-section>
-  </c-button-group>
-</div>
+Use `c-button-group-section` component to render sections that are not buttons inside `c-button-group`
+
+<c-button-group>
+  <c-button @click="decrement">
+    <chevron-down-icon color="var(--c-color-red-text)" />
+  </c-button>
+  <c-button-group-section>{{ count }}</c-button-group-section>
+  <c-button @click="increment">
+    <chevron-up-icon color="var(--c-color-teal-text)" />
+  </c-button>
+</c-button-group>
 
 ```vue
-<div style="display: flex; justify-content: center; gap: 12px">
+<template>
   <c-button-group>
-    <c-button-group-section variant="filled">123</c-button-group-section>
-    <c-button>
+    <c-button @click="decrement">
+      <chevron-down-icon color="var(--c-color-red-text)" />
+    </c-button>
+    <c-button-group-section>{{ count }}</c-button-group-section>
+    <c-button @click="increment">
       <chevron-up-icon color="var(--c-color-teal-text)" />
     </c-button>
   </c-button-group>
-  <c-button-group>
-    <c-button>
-      <chevron-down-icon color="var(--c-color-red-text)" />
-    </c-button>
-    <c-button-group-section>123</c-button-group-section>
-    <c-button>
-      <chevron-up-icon color="var(--c-color-teal-text)" />
-    </c-button>
-  </c-button-group>
-  <c-button-group>
-    <c-button>
-      <chevron-down-icon color="var(--c-color-red-text)" />
-    </c-button>
-    <c-button-group-section>123</c-button-group-section>
-  </c-button-group>
-</div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const count = ref(123)
+const increment = () => {
+  count.value += 1
+}
+const decrement = () => {
+  count.value -= 1
+}
+</script>
 ```
 
-## Get element ref
+### Polymorphic
+
+### Get element ref
 
 ```vue
 <template>
