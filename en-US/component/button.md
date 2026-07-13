@@ -7,7 +7,7 @@ lang: en-US
 
 Button component to render button or link
 
-### Variant
+## Variant
 
 <script setup>
 import { ChevronDownIcon, ChevronRightIcon, ChevronUpIcon, DownloadIcon, ImageIcon } from '@lucide/vue'
@@ -71,14 +71,15 @@ const decrement = () => {
 }
 </style>
 
-<div style="display:flex;gap:12px;">
-  <c-button>Default</c-button>
-  <c-button variant="filled">Filled</c-button>
-  <c-button variant="light">Light</c-button>
-  <c-button variant="outline">Outline</c-button>
-  <c-button variant="subtle">Subtle</c-button>
-  <c-button variant="transparent">Transparent</c-button>
-  <c-button variant="white">White</c-button>
+<div style="display: flex; gap: 12px; flex-wrap: wrap;">
+    <c-button>Default</c-button>
+    <c-button variant="filled">Filled</c-button>
+    <c-button variant="light">Light</c-button>
+    <c-button variant="outline">Outline</c-button>
+    <c-button variant="dashed">Dashed</c-button>
+    <c-button variant="subtle">Subtle</c-button>
+    <c-button variant="transparent">Transparent</c-button>
+    <c-button variant="white">White</c-button>
 </div>
 
 ```vue
@@ -93,7 +94,7 @@ const decrement = () => {
 </template>
 ```
 
-### Color
+## Color
 
 Default theme includes several color presets. And custom color is acceptable.
 
@@ -207,7 +208,7 @@ Default theme includes several color presets. And custom color is acceptable.
   <c-button variant="white" color="orange">Orange</c-button>
 </div>
 
-### Custom color:
+## Custom color:
 
 <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px;">
   variant:
@@ -259,7 +260,7 @@ Default theme includes several color presets. And custom color is acceptable.
  </template>
 ```
 
-### Full width
+## Full width
 
 If the `fullWidth` props is set, the `Button` will take 100% of the parent width:
 
@@ -271,7 +272,7 @@ If the `fullWidth` props is set, the `Button` will take 100% of the parent width
 <c-button full-width>Full width button</c-button>
 ```
 
-### Left and right sections
+## Left and right sections
 
 `left-section` and `right-section` allow adding icons or any other element to the left and right sides of the button. When a section is added, padding on the corresponding side is reduced. Both slot and prop are acceptable.
 
@@ -326,7 +327,7 @@ const downloadIcon = h(DownloadIcon, { size: 14 }) // or jsx
 
 (**WIP**) Note that `left-section` and `right-section` are flipped in RTL mode (`left-section` is displayed on the right and `right-section` is displayed on the left).
 
-### Sections position
+## Sections position
 
 The `justify` prop sets the `justify-content` of the `inner` element. You can use it to change the alignment of left and right sections. For example, to spread them across the button, set `justify="space-between"`.
 
@@ -416,7 +417,7 @@ If you need to align just one section to the side of the button, set `justify` t
 </template>
 ```
 
-### Size
+## Size
 
 `Button` support `xs` - `xl` and `compact-xs` - `compact-xl` sizes. `compact` sizes have the same font size as `xs` - `xl` but with reduced padding and height.
 
@@ -454,7 +455,7 @@ If you need to align just one section to the side of the button, set `justify` t
 </template>
 ```
 
-### Gradient variant
+## Gradient variant
 
 When the `variant` prop is set to `gradient`, you can control the gradient with the `gradient` prop, which accepts an object with `form`,`to` and `deg` properties. If the `gradient` props is not set, `Button` will use `theme.defaultGradient` which can be configured on the theme object. The `gradient` prop is ignored when `variant` is not `gradient`.
 
@@ -482,7 +483,7 @@ When the `variant` prop is set to `gradient`, you can control the gradient with 
 >Gradient button</c-button>
 ```
 
-### Disabled state
+## Disabled state
 
 To make a `Button` disabled, set the `disabled` prop. This will prevent any interactions with the button and add disabled styles. If you want the button to just look disabled but still be interactive, set the `data-disabled` prop instead. Note that disabled styles are the same for all variants.
 
@@ -509,7 +510,7 @@ The `<a />` element does not support the `disabled` attribute. To make a `Button
 >Disabled button</c-button>
 ```
 
-### Customize disabled styles
+## Customize disabled styles
 
 To customize disabled styles, it is recommended to use both `&:disabled` and `&[data-disabled]` selectors:
 
@@ -534,11 +535,11 @@ To customize disabled styles, it is recommended to use both `&:disabled` and `&[
 </style>
 ```
 
-### Disabled button with Tooltip (WIP)
+## Disabled button with Tooltip (WIP)
 
 The `onMouseLeave` event is not triggered when a `Button` is disabled, so if you need to use a Tooltip with a disabled `Button`, you need to set the `data-disabled` prop on the `Button` instead of `disabled`. Note that it is also required to change the `onClick` event library to `(event) => event.preventDefault()` as the `Button` is not actually disabled and will still trigger the `onClick` event.
 
-### Loading state
+## Loading state
 
 When the `loading` prop is set, the `Button` will be disabled and a Loader with overlay will be rendered in the center of the button. Loader color depends on the `Button` variant.
 
@@ -558,7 +559,7 @@ When the `loading` prop is set, the `Button` will be disabled and a Loader with 
 </template>
 ```
 
-### Loader props
+## Loader props
 
 You can customize the Loader with the `loaderProps` prop, which accepts all props that the Loader component has.
 
@@ -570,13 +571,13 @@ You can customize the Loader with the `loaderProps` prop, which accepts all prop
 </template>
 ```
 
-### Styles API (WIP)
+## Styles API (WIP)
 
-### Custom variants (WIP)
+## Custom variants (WIP)
 
 To add new `Button` variants, use the data-variant attribute. Usually the new variants are added to the theme, this way they are available in all `c-button` components in your application.
 
-### Custom variant colors
+## Custom variant colors
 
 You can customize colors for `c-button` and other component variants by adding variantColorResolver to your theme.
 
@@ -640,7 +641,7 @@ const variantColorResolver = (input) => {
 </script>
 ```
 
-### Auto contrast
+## Auto contrast
 
 `Button` supports the `auto-contrast` prop and theme.autoContrast. If `autoContrast` is set either on `Button` or on the theme, the content color will be ajusted to have sufficient contrast with the value specified in the `color` prop.
 
@@ -660,7 +661,7 @@ Note that the `auto-contrast` feature works only if you use the `color` prop to 
 </template>
 ```
 
-### Button group
+## Button group
 
 <div style="display:flex; flex-direction:column; align-items: center; gap: 12px;">
   <c-button-group>
@@ -705,7 +706,7 @@ Note that you must not wrap child `c-button` components with any additional elem
 </template>
 ```
 
-### Button group section
+## Button group section
 
 Use `c-button-group-section` component to render sections that are not buttons inside `c-button-group`
 
@@ -745,9 +746,9 @@ const decrement = () => {
 </script>
 ```
 
-### Polymorphic
+## Polymorphic
 
-### Get element ref
+## Get element ref
 
 ```vue
 <template>
