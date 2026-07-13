@@ -13,6 +13,8 @@ Almost all the **default value of props** for each component can be quickly modi
 
 And, the writing of component codes pay great attention to lowering the threshold of **source code reading**, and the style of code is as close to the usual business code habits as possible to avoid dazzling encapsulation.
 
+**warning** This project is **under active development**. Features and APIs are **subject to change** without prior notice. We are moving fast, and while we strive to keep things stable, **breaking changes may occur** between versions.
+
 ## Latest Version
 
 [![NPM version](https://img.shields.io/npm/v/@cck-ui/core?style=for-the-badge)](https://npmx.dev/package/@cck-ui/core)
