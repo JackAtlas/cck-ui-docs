@@ -29,6 +29,68 @@ pnpm add @cck-ui/core @cck-ui/hooks
 
 Install PostCSS plugins and postcss-preset-cck
 
+```sh
+pnpm add --dev postcss postcss-preset-cck postcss-simple-vars
+```
+
+> **PostCSS without framework**
+>
+> If you are using a framework that is not officially supported, you may need to configure PostCSS manually. Please refer to the framework's documentation for specific instructions. For instance, if you are using Webpack, it will be necessary to install and set up [postcss-loader](https://webpack.js.org/loaders/postcss-loader/).
+
+Add `postcss-preset-cck` to your postcss setting:
+
+```ts
+// For example, in your vite setup:
+import { defineConfig } from 'vite'
+import presetCck from 'postcss-preset-cck'
+import simpleVars from 'postcss-simple-vars'
+
+export default defineConfig({
+  // other settings
+  css: {
+    postcss: {
+      plugins: [
+        ...presetCck({ autoRem: true }),
+        simpleVars({
+          variables: {
+            'c-breakpoint-xs': '36em',
+            'c-breakpoint-sm': '48em',
+            'c-breakpoint-md': '62em',
+            'c-breakpoint-lg': '75em',
+            'c-breakpoint-xl': '88em'
+          }
+        })
+      ]
+    }
+  }
+})
+```
+
+Add styles imports to the root of your application. Usually styles are imported once in the root file. For example, you can import styles in your entrance file:
+
+```ts
+// core styles are required for all packages
+import '@cck-ui/core/styles.css'
+```
+
+Wrap your application with [CckConfigProvider](../theming/cck-config-provider.md):
+
+```vue
+<template>
+  <cck-config-provider :theme="theme">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { createTheme, CckConfigProvider } from '@cck-ui/core'
+
+const theme = createTheme({
+  /** Put your cck-ui theme override here  */
+})
+</script>
+```
+
 ## Import Directly
 
 CCK-UI already has the ability of tree-shaking. You can directly import components where you need to use them, and only those components you used will be packaged.
@@ -67,3 +129,21 @@ createApp(App).use(install).mount('#app')
 ```
 
 ## Import Automatically (WIP)
+
+## Set up VS Code
+
+By default, VS Code does not recognize postcss syntax, you need to install PostCSS Intellisense and Highlighting to enable syntax highlighting and supports variables (`$variables`) errors.
+
+To get CSS variables autocomplete, install CSS Variable Autocomplete extension. Then create `.vscode/settings.json` file in the root folder of your project with the following content:
+
+```json
+{
+  "cssVariables.lookupFiles": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "node_modules/@cck-ui/core/styles.css"
+  ]
+}
+```
