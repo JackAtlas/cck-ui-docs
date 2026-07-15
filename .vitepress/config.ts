@@ -33,6 +33,59 @@ export default defineConfig({
             { text: 'Color', link: '/en-US/theming/colors' },
             { text: 'Color scheme', link: '/en-US/theming/color-schemes' }
           ]
+        },
+        {
+          text: 'Styling',
+          items: [
+            { text: 'CSS modules', link: '/en-US/styles/css-modules' },
+            { text: 'PostCSS preset', link: '/en-US/styles/postcss-preset' },
+            { text: 'Global styles', link: '/en-US/styles/global-styles' },
+            { text: 'CSS variables', link: '/en-US/styles/css-variables' },
+            { text: 'CSS variables list', link: '/en-US/styles/css-variables-list' },
+            { text: 'rem, em and px units', link: '/en-US/styles/rem' },
+            { text: 'style prop', link: '/en-US/styles/style' },
+            { text: 'Responsive styles', link: '/en-US/styles/responsive' },
+            { text: 'Styles API', link: '/en-US/styles/styles-api' }
+          ]
+        },
+        {
+          text: 'Other',
+          items: [
+            { text: 'Styles performance', link: '/en-US/styles/styles-performance' },
+            { text: 'Polymorphic components', link: '/en-US/styles/polymorphic' }
+          ]
+        }
+      ],
+      '/en-US/styles/': [
+        {
+          text: 'Theming',
+          items: [
+            { text: 'CckConfigProvider', link: '/en-US/theming/cck-config-provider' },
+            { text: 'Theme object', link: '/en-US/theming/theme-object' },
+            { text: 'Color', link: '/en-US/theming/colors' },
+            { text: 'Color scheme', link: '/en-US/theming/color-schemes' }
+          ]
+        },
+        {
+          text: 'Styling',
+          items: [
+            { text: 'CSS modules', link: '/en-US/styles/css-modules' },
+            { text: 'PostCSS preset', link: '/en-US/styles/postcss-preset' },
+            { text: 'Global styles', link: '/en-US/styles/global-styles' },
+            { text: 'CSS variables', link: '/en-US/styles/css-variables' },
+            { text: 'CSS variables list', link: '/en-US/styles/css-variables-list' },
+            { text: 'rem, em and px units', link: '/en-US/styles/rem' },
+            { text: 'style prop', link: '/en-US/styles/style' },
+            { text: 'Responsive styles', link: '/en-US/styles/responsive' },
+            { text: 'Styles API', link: '/en-US/styles/styles-api' }
+          ]
+        },
+        {
+          text: 'Other',
+          items: [
+            { text: 'Styles performance', link: '/en-US/styles/styles-performance' },
+            { text: 'Polymorphic components', link: '/en-US/styles/polymorphic' }
+          ]
         }
       ],
       '/en-US/component/': [
