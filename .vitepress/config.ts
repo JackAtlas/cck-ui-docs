@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import presetCck from 'postcss-preset-cck'
+import simpleVars from 'postcss-simple-vars'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -64,5 +66,23 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/JackAtlas/cck-ui' }
     ]
+  },
+  vite: {
+    css: {
+      postcss: {
+        plugins: [
+          ...presetCck({ autoRem: true }),
+          simpleVars({
+            variables: {
+              'c-breakpoint-xs': '36em',
+              'c-breakpoint-sm': '48em',
+              'c-breakpoint-md': '62em',
+              'c-breakpoint-lg': '75em',
+              'c-breakpoint-xl': '88em'
+            }
+          })
+        ]
+      }
+    }
   }
 })
