@@ -20,7 +20,8 @@ export default defineConfig({
           text: 'Introduction',
           items: [
             { text: 'Welcome to CCK UI', link: '/en-US/guide/cck-ui' },
-            { text: 'Browser support', link: '/en-US/guide/browser-support' }
+            { text: 'Browser support', link: '/en-US/guide/browser-support' },
+            { text: 'About CCK UI', link: '/en-US/guide/about' }
           ]
         }
       ],
@@ -118,7 +119,11 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/JackAtlas/cck-ui' }
-    ]
+    ],
+
+    footer: {
+      message: 'Built by <a href="https://jackatlas.xyz" target="_blank" no-referer>JackAtlas</a>'
+    }
   },
   vite: {
     css: {
