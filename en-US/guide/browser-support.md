@@ -5,6 +5,17 @@ lang: en-US
 
 # Browser support
 
+CCK UI is tested on real devices in the following browsers before each minor and major release: Chrome, Safari, Firefox, Edge, Safari for iOS, Chrome for Android. Testing in other browsers is not performed.
+
+## Supported browsers
+
+All CCK UI components and hooks were tested to work in the following browsers:
+
+- Chromium browsers 108+ - Chrome, Edge, Chrome for Android, etc.
+- Firefox 101+
+- Safari 15.4+
+- IE (any version) is not supported
+
 Browser versions that support [:where selector](https://caniuse.com/mdn-css_selectors_where) and [@layer directive](https://caniuse.com/mdn-css_at-rules_layer) features that are required for CCK UI styles (any versions below may have major issues with styles):
 
 - Chromium browsers 99+ - Chrome, Edge, Chrome for Android, etc.

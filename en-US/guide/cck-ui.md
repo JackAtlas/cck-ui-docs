@@ -19,6 +19,8 @@ And, the writing of component codes pay great attention to lowering the threshol
 
 [![NPM version](https://img.shields.io/npm/v/@cck-ui/core?style=for-the-badge)](https://npmx.dev/package/@cck-ui/core)
 
+[![NPM Last Update](https://img.shields.io/npm/last-update/%40cck-ui%2Fcore?style=for-the-badge)](https://npmx.dev/package/@cck-ui/core)
+
 ## Install
 
 It is recommended to use pnpm to install:

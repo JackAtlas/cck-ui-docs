@@ -5,7 +5,25 @@ lang: en-US
 
 # CckConfigProvider
 
-`CckConfigProvider` provides a theme object context value, manages color scheme changes, and injects CSS variables. At least one must be rendered at the root of your application.
+`CckConfigProvider` provides a [theme object](./theme-object) context value, manages color scheme changes, and injects [CSS variables](../styles/css-variables). At least one must be rendered at the root of your application.
+
+## Usage
+
+```vue
+<template>
+  <cck-config-provider :theme="theme">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { createTheme, CckConfigProvider } from '@cck-ui/core'
+
+const theme = createTheme({
+  /** Your theme override here */
+})
+</script>
+```
 
 ## CckConfigProvider props
 
@@ -79,31 +97,126 @@ interface ConfigProviderProps {
 
 ### theme
 
-Pass a theme object override to the `theme` prop. It will be merged with the default theme and used in all components within.
+Pass a [theme object](./theme-object) override to the `theme` prop. It will be merged with the default theme and used in all components within.
+
+```vue
+<template>
+  <cck-config-provider :theme="theme">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { createTheme, CckConfigProvider } from '@cck-ui/core'
+
+const theme = createTheme({
+  fontFamily: 'Open sans, sans-serif',
+  primaryColor: 'cyan'
+})
+</script>
+```
 
 ### colorSchemeManager
 
-`colorSchemeManager` is used to retrieve and set the color scheme value in external storage. By default, `CckConfigProvider` uses `window.localStorage` to store the color scheme value, but you can pass your own implementation to the `colorSchemeManager` prop. You can lear more about color scheme management in the color schemes guide.
+`colorSchemeManager` is used to retrieve and set the color scheme value in external storage. By default, `CckConfigProvider` uses `window.localStorage` to store the color scheme value, but you can pass your own implementation to the `colorSchemeManager` prop. You can lear more about color scheme management in the [color schemes guide](./color-schemes).
+
+```vue
+<template>
+  <cck-config-provider :color-scheme-manager="colorSchemeManager">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { localStorageColorSchemeManager, CckConfigProvider } from '@cck-ui/core'
+
+const colorSchemeManager = localStorageColorSchemeManager({
+  key: 'my-app-color-scheme'
+})
+</script>
+```
 
 ### defaultColorScheme
 
-The `defaultColorScheme` value is used when `colorSchemeManager` cannot retrieve the value from external storage, for example during server-side rendering or when the user hasn't selected a preferred color scheme. Possible values are `light`, `dark`, and `auto`. By default, the color scheme value is `light`. You can learn more about color scheme management in the color schemes guide.
+The `defaultColorScheme` value is used when `colorSchemeManager` cannot retrieve the value from external storage, for example during server-side rendering or when the user hasn't selected a preferred color scheme. Possible values are `light`, `dark`, and `auto`. By default, the color scheme value is `light`. You can learn more about color scheme management in the [color schemes guide](./color-schemes).
+
+```vue
+<template>
+  <cck-config-provider default-color-scheme="dark">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider } from '@cck-ui/core'
+</script>
+```
 
 ### cssVariablesSelector
 
-`cssVariablesSelector` is a CSS selector to which CSS variables should be added. By default, variables are applied to `:root` and `:host`. `CckConfigProvider` generates CSS variables based on given theme override and `cssVariablesResolver`, then these variables are rendered into `<style />` tag next to your application. You can learn more about CCK UI CSS variables in the CSS variables guide.
+`cssVariablesSelector` is a CSS selector to which [CSS variables](../styles/css-variables) should be added. By default, variables are applied to `:root` and `:host`. `CckConfigProvider` generates CSS variables based on given [theme override](./theme-object) and `cssVariablesResolver`, then these variables are rendered into `<style />` tag next to your application. You can learn more about CCK UI CSS variables in the [CSS variables guide](../styles/css-variables).
+
+```vue
+<template>
+  <cck-config-provider css-variables-selector="html">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider } from '@cck-ui/core'
+</script>
+```
 
 ### withCssVariables
 
 `withCssVariables` determines whether theme CSS variables should be added to the given `cssVariablesSelector`. By default, it is set to `true`. You should not change it unless you want to manage CSS variables via a `.css` file (note that in this case you will need to generate all theme tokens that are not part of the default theme on your side).
 
+```vue
+<template>
+  <cck-config-provider :with-css-variables="false">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider } from '@cck-ui/core'
+</script>
+```
+
 ### getRootElement
 
-`getRootElement` is a function that returns the root application element (usually `html`) to set the `data-c-color-scheme` attribute. The default value is `() => document.documentElement` which means that the `data-c-color-scheme` attribute will be added to the `<html />` tag. You can learn more about color scheme management in the color schemes guide.
+`getRootElement` is a function that returns the root application element (usually `html`) to set the `data-c-color-scheme` attribute. The default value is `() => document.documentElement` which means that the `data-c-color-scheme` attribute will be added to the `<html />` tag. You can learn more about color scheme management in the [color schemes guide](./color-schemes).
+
+```vue
+<template>
+  <cck-config-provider :get-root-element="getRootElement">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider } from '@cck-ui/core'
+
+const getRootElement = () => typeof window === 'undefined' ? undefined : document.body
+</script>
+```
 
 ### classNamesPrefix
 
 `classNamesPrefix` is a prefix for components' static classes (for example `{selector}-Text-root`). The default value is `c` - all components will have a `c-` prefix in their **static classes**.
+
+```vue
+<template>
+  <cck-config-provider>
+    <c-text>Just some text</c-text>
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider, CText } from '@cck-ui/core'
+</script>
+```
 
 In this case (default `classNamesPrefix`), the Text component will have the following classes:
 
@@ -115,6 +228,18 @@ With `classNamesPrefix` you can change only the **static class**
 
 Now the Text component will have the following classes:
 
+```vue
+<template>
+  <cck-config-provider class-names-prefix="app">
+    <c-text>Just some text</c-text>
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider, CText } from '@cck-ui/core'
+</script>
+```
+
 - `c-focus-auto` - `classNamesPrefix` does not impact global utility classes - they are static and **cannot be changed**
 - `m_14602a9d` - `classNamesPrefix` does not impact library classes - they are static and **cannot be changed**
 - `app-Text-root` - component static class has `classNamesPrefix` instead of `c`
@@ -123,17 +248,41 @@ Now the Text component will have the following classes:
 
 `withStaticClasses` determines whether components should have static classes, for example, `c-Button-root`. By default, static classes are enabled. To disable them, set `withStaticClasses` to `false`:
 
+```vue
+<template>
+  <cck-config-provider :with-static-classes="false">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider } from '@cck-ui/core'
+</script>
+```
+
 ### withGlobalClasses
 
 `withGlobalClasses` determines whether global classes should be added with a `<style />` tag. Global classes are required for `hiddenFrom / visibleFrom` and `lightHidden / darkHidden` props to work. By default, global classes are enabled. To disable them, set `withGlobalClasses` to `false`. Note that disabling global classes may break styles of some components.
 
+```vue
+<template>
+  <cck-config-provider :with-global-classes="false">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider } from '@cck-ui/core'
+</script>
+```
+
 ### getStyleNonce
 
-`getStyleNonce` is a function to generate a nonce attribute added to dynamically generated `<style />` tags.
+`getStyleNonce` is a function to generate a [nonce](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/nonce) attribute added to dynamically generated `<style />` tags.
 
 ### cssVariablesResolver
 
-`cssVariableResolver` is a function to generate CSS variables styles based on the theme object. You can learn more about CCK UI CSS variables in the CSS variables guide.
+`cssVariableResolver` is a function to generate CSS variables styles based on the [theme object](./theme-object). You can learn more about CCK UI CSS variables in the [CSS variables guide](../styles/css-variables).
 
 ### env
 
@@ -143,5 +292,17 @@ The `env` prop can be used in a test environment to disable some features that m
 - portals that render a child component in a different part of the DOM
 
 To enable the test environment, set `env` to `test`:
+
+```vue
+<template>
+  <cck-config-provider env="test">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider } from '@cck-ui/core'
+</script>
+```
 
 Note that `env="test"` is intended to be used in test environment only with Vitest. Do not use it in development or production environments.

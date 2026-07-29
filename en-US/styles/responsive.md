@@ -171,9 +171,30 @@ All CCK UI components that have a root element support the `hiddenFrom` and `vis
   <c-button variant="filled" visible-from="md" color="pink">Visible from md</c-button>
 </c-group>
 
+```vue
+<template>
+  <c-group justify="center">
+    <c-button variant="filled" hidden-from="sm" color="orange">
+      Hidden from sm
+    </c-button>
+    <c-button variant="filled" visible-from="sm" color="cyan">
+      Visible from sm
+    </c-button>
+    <c-button variant="filled" visible-from="md" color="pink">
+      Visible from md
+    </c-button>
+  </c-group>
+</template>
+```
+
 ## Hidden and visible from as classes
 
 If you are building a custom component and want to use the same logic as in the `hiddenFrom` and `visibleFrom` props but you do not want to use CCK UI components, you can use the `c-hiddenfrom-{x}` and `c-visible-from-{x}` classes.
+
+```vue
+<div class="c-hidden-from-md">Hidden from md</div>
+<div class="c-visible-from-xl">Visible from xl</div>
+```
 
 ## Component size based on media query
 
@@ -189,7 +210,7 @@ You can use `rem` and `em` functions from postcss-preset-cck in container querie
   <div :class="$style.child">Resize parent element to see container query in action</div>
 </div>
 
-## Responsive style props
+## Responsive style props (WIP)
 
 You can use object syntax to add responsive styles with style props. Note that responsive style props are less performant than regular style props, it is not recommended to use them in large lists of elements.
 

@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 <script setup>
-import { darken, defaultVariantColorsResolver, parseThemeColor, rgba } from '@cck-ui/core'
+import { createTheme, darken, defaultVariantColorsResolver, parseThemeColor, rgba, virtualColor } from '@cck-ui/core'
 
 const variantColorResolver = (input) => {
   const defaultResolvedColors = defaultVariantColorsResolver(input)
@@ -41,15 +41,44 @@ const variantColorResolver = (input) => {
 
   return defaultResolvedColors
 }
+
+const extraColorTheme = createTheme({
+  colors: {
+    'ocean-blue': ['#7AD1DD', '#5FCCDB', '#44CADC', '#2AC9DE', '#1AC2D9', '#11B7CD', '#09ADC3', '#0E99AC', '#128797', '#147885'],
+    'bright-pink': ['#F0BBDD', '#ED9BCF', '#EC7CC3', '#ED5DB8', '#F13EAF', '#F71FA7', '#FF00A1', '#E00890', '#C50E82', '#AD1374'],
+  },
+})
+
+const virtualColorsTheme = createTheme({
+  colors: {
+    primary: virtualColor({
+      name: 'primary',
+      dark: 'pink',
+      light: 'cyan'
+    })
+  }
+})
 </script>
 
 # Colors
 
 CCK UI uses [open-color](https://yeun.github.io/open-color/) in the default theme with some additions. Each color has 10 shades.
 
-Colors are exposed on the [theme object](./theme-object) as an array of strings. You can access a color shade by color name and index(0-9); colors with a larger index are darker:
+Colors are exposed on the [theme object](./theme-object) as an array of strings. You can access a color shade by color name and index (0-9); colors with a larger index are darker:
 
-Colors are also exposed as CSS variables:
+```vue
+<div :style="{
+  backgroundColor: theme.colors.blue[1],
+  color: theme.colors.blue[9]
+}">This is a blue theme</div>
+
+<script setup>
+import { useCckTheme } from '@cck-ui/core'
+const theme = useCckTheme()
+</script>
+```
+
+Colors are also exposed as [CSS variables](../styles/css-variables):
 
 ```css
 .demo {
@@ -59,9 +88,37 @@ Colors are also exposed as CSS variables:
 }
 ```
 
-## Adding extra colors
+## Adding extra colors (WIP)
 
 You can add any number of extra colors to the `theme.colors` object. This will allow you to use them in all components that support the `color` prop, for example [Button](../component/button).
+
+<cck-config-provider :theme="extraColorTheme">
+  <c-group>
+    <c-button variant="filled" color="ocean-blue">Ocean blue button</c-button>
+    <c-button variant="filled" color="bright-pink">Bright pink button</c-button>
+  </c-group>
+</cck-config-provider>
+
+```vue
+<template>
+  <cck-config-provider :theme="extraColorTheme">
+    <c-group>
+      <c-button variant="filled" color="ocean-blue">Ocean blue button</c-button>
+      <c-button variant="filled" color="bright-pink">Bright pink button</c-button>
+    </c-group>
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider, createTheme } from '@cck-ui/core'
+const theme = createTheme({
+  colors: {
+    'ocean-blue': ['#7AD1DD', '#5FCCDB', '#44CADC', '#2AC9DE', '#1AC2D9', '#11B7CD', '#09ADC3', '#0E99AC', '#128797', '#147885'],
+    'bright-pink': ['#F0BBDD', '#ED9BCF', '#EC7CC3', '#ED5DB8', '#F13EAF', '#F71FA7', '#FF00A1', '#E00890', '#C50E82', '#AD1374'],
+  },
+})
+</script>
+```
 
 ## Virtual colors
 
@@ -71,9 +128,63 @@ A virtual color is a special color whose values should be different for light an
 - `light` - a key of `theme.colors` object for light color scheme
 - `dark` - a key of `theme.colors` object for dark color scheme
 
-To see the demo in action, switch between light and dark color schemes
+To see the demo in action, switch between light and dark color schemes:
 
-Virtual colors support autoContrast: the text color of `filled` components is calculated separately for each other scheme based on the resolved background color. Enable `autoContrast` on the theme or component and switch between light and dark color schemes to see the text color adjust to the undylying virtual color:
+<cck-config-provider :theme="virtualColorsTheme">
+  <c-box bg="primary" c="white" p="md" :fw="700">
+    This box has virtual background color, it is pink in dark mode and cyan in light mode
+  </c-box>
+</cck-config-provider>
+
+```vue
+<template>
+  <cck-config-provider :theme="theme">
+    <c-box bg="primary" c="white" p="md" :fw="700">
+      This box has virtual background color, it is pink in dark mode and cyan in light mode
+    </c-box>
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CBox, CckConfigProvider, createTheme, virtualColor } from '@cck-ui/core'
+const theme = createTheme({
+  colors: {
+    primary: virtualColor({
+      name: 'primary',
+      dark: 'pink',
+      light: 'cyan'
+    })
+  }
+})
+</script>
+```
+
+Virtual colors support [autoContrast](theme-object): the text color of `filled` components is calculated separately for each other scheme based on the resolved background color. Enable `autoContrast` on the theme or component and switch between light and dark color schemes to see the text color adjust to the undylying virtual color:
+
+```vue
+<template>
+  <cck-config-provider :theme="theme">
+    <c-box bg="primary" c="white" p="md" :fw="700">
+      This box has virtual background color, it is pink in dark mode and cyan in light mode
+    </c-box>
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CBox, CckConfigProvider, colorsTuple, createTheme, virtualColor } from '@cck-ui/core'
+const theme = createTheme({
+  colors: {
+    white: colorsTuple('#ffffff'),
+    black: colorsTuple('#000000'),
+    adaptive: virtualColor({
+      name: 'adaptive',
+      dark: 'white',
+      light: 'black'
+    })
+  }
+})
+</script>
+```
 
 ## colorsTuple
 
@@ -81,6 +192,16 @@ Use the `colorsTuple` function to:
 
 - Use a single color as the same color for all shades
 - Transform dynamic string arrays to CCK UI color tuple (the array should still have 10 values)
+
+```ts
+import {colorsTuple, createTheme } from '@cck-ui/core'
+const theme = createTheme({
+  colors: {
+    custom: colorsTuple('#ffc0cb'),
+    dynamic: colorsTuple(Array.from({length: 10}, (_,index) => '#ffc0cb'))
+  }
+})
+```
 
 ## Supported color formats
 

@@ -189,7 +189,7 @@ interface CTheme {
 
 ## Usage
 
-To customize the theme, pass a theme override object to CckConfigProvider `theme` prop. The theme override will be deeply merged with the default theme.
+To customize the theme, pass a theme override object to [CckConfigProvider](./cck-config-provider) `theme` prop. The theme override will be deeply merged with the default theme.
 
 ```vue
 <script setup>
@@ -329,33 +329,162 @@ To disable active styles for all components, set `theme.activeClassName` to an e
 
 `theme.defaultGradient` controls the default gradient configuration for components that support `variant="gradient"` ([Button](../component/button), etc.).
 
+<cck-config-provider :theme="defaultGradientTheme">
+  <c-button variant="gradient">Button with custom default gradient</c-button>
+</cck-config-provider>
+
+<script setup>
+import { createTheme } from '@cck-ui/core'
+const defaultGradientTheme = createTheme({
+  defaultGradient: {
+    from: 'orange',
+    to: 'red',
+    deg: 45
+  }
+})
+</script>
+
+```vue
+<cck-config-provider :theme="theme">
+  <c-button variant="gradient">Button with custom default gradient</c-button>
+</cck-config-provider>
+
+<script setup>
+import { CckConfigProvider, createTheme } from '@cck-ui/core'
+const theme = createTheme({
+  defaultGradient: {
+    from: 'orange',
+    to: 'red',
+    deg: 45
+  }
+})
+</script>
+```
+
 ### fontWeight
 
 `theme.fontWeight` controls `font-weight` values used in all components. The default values are `regular: 400, medium: 600, bold: 700`. Each value is mapped to a CSS variable: `--c-font-weight-regular`, `--c-font-weight-medium`, `--c-font-weight-bold`.
 
+For example, to set the medium font weight from `600` to `500`:
+
+```vue
+<template>
+  <cck-config-provider :theme="theme">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider, createTheme } from '@cck-ui/core'
+
+const theme = createTheme({
+  fontWeights: {
+    medium: '500'
+  }
+})
+</script>
+```
+
 ### components
 
-`theme.components` allows overriding of components' default props and styles with `classNames` and `styles` properties. You can learn more about these features in the default props and Styles API guides.
+`theme.components` allows overriding of components' default props and styles with `classNames` and `styles` properties. You can learn more about these features in the default props and [Styles API](../styles/styles-api) guides.
 
 ### other
 
 `theme.other` is an object that can be used to store any other properties that you want to access with the theme object.
 
+```vue
+<template>
+  <cck-config-provider :theme="theme">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider, createTheme } from '@cck-ui/core'
+
+const theme = createTheme({
+  charcoal: '#333333',
+  primaryHeadingSize: 45,
+  fontWeights: {
+    bold: 700,
+    extraBold: 900
+  }
+})
+</script>
+```
+
 ## Store theme override object in a variable
 
 To store a theme override object in a variable, use the `createTheme` function:
+
+```vue
+<template>
+  <cck-config-provider :theme="myTheme">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider, createTheme } from '@cck-ui/core'
+
+const myTheme = createTheme({
+  primaryColor: 'orange',
+  defaultRadius: 0
+})
+</script>
+```
 
 ## Merge multiple theme overrides
 
 Use the `mergeThemeOverrides` function to merge multiple themes into one theme override object
 
+```vue
+<template>
+  <cck-config-provider :theme="myTheme">
+    <!-- Your app here -->
+  </cck-config-provider>
+</template>
+
+<script setup>
+import { CckConfigProvider, createTheme, mergeThemeOverrides } from '@cck-ui/core'
+
+const theme1 = createTheme({
+  primaryColor: 'orange',
+  defaultRadius: 0
+})
+
+const theme2 = createTheme({
+  cursorType: 'pointer'
+})
+
+const myTheme = mergeThemeOverrides(theme1, theme2)
+</script>
+```
+
 ## use-cck-theme hook
 
-The `useCckTheme` hook returns the theme object from CckConfigProvider context
+The `useCckTheme` hook returns the theme object from [CckConfigProvider](./cck-config-provider) context
+
+```vue
+<template>
+  <div :style="{ background: theme.color.blue[5] }"></div>
+</template>
+
+<script>
+import { useCckTheme } from '@cck-ui/core'
+
+const theme = useCckTheme()
+</script>
+```
 
 ## Default theme
 
-You can import the default theme object from the `@cck-ui/core` package. It includes all theme properties with default values. When you pass a theme overrides to CckConfigProvider, it will be deeply merged with the default theme.
+You can import the default theme object from the `@cck-ui/core` package. It includes all theme properties with default values. When you pass a theme overrides to [CckConfigProvider](./cck-config-provider), it will be deeply merged with the default theme.
+
+```ts
+import { DEFAULT_THEME } from '@cck-ui/core'
+```
 
 ## Access theme outside of components
 

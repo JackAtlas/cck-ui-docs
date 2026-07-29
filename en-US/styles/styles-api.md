@@ -33,4 +33,27 @@ With the `classNames` prop you can add classes to inner elements of CCK UI compo
 
 You can also define `classNames` in theme.components to apply them to all components of a specific type:
 
-## Components CSS variables
+## Components CSS variables (WIP)
+
+Most of CCK UI components use CSS variables to define colors, sizes, paddings and other properties. You can override these values using a custom CSS variables resolver function in theme.components or by passing it to the `vars` prop.
+
+You can find CSS variables information under the `Styles API` part in a component's documentation. Example of [Button](../component/button) component CSS variables:
+
+|Selector|Variable|Description|
+|---|---|---|
+|root|--button-bg|Controls `background`|
+||--button-bd|Controls `border`|
+||--button-hover|Controls `background` when hovered|
+||--button-color|Controls text `color`|
+||--button-hover-color|Controls text `color` when hovered|
+||--button-radius|Controls `border-radius`|
+||--button-height|Controls `height` of the button|
+||--button-padding-x|Controls horizontal `padding` of the button|
+||--button-fz|Controls `font-size` of the button|
+||--button-justify|Controls `justify-content` of `inner` element|
+
+Example of a custom CSS variables resolver function used to add more sizes to the [Button](../component/button) component:
+
+## styles prop
+
+The `styles` prop works the same way as `classNames`, but applies inline styles. Note that inline styles have higher specificity than classes, so you will not be able to override them with classes without using `!important`. You cannot use pseudo-classes (for example, `:hover`, `:first-of-type`) and media queries inside the `styles` prop.
