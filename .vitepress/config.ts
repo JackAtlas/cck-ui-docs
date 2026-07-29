@@ -31,8 +31,8 @@ export default defineConfig({
           items: [
             { text: 'CckConfigProvider', link: '/en-US/theming/cck-config-provider' },
             { text: 'Theme object', link: '/en-US/theming/theme-object' },
-            { text: 'Color', link: '/en-US/theming/colors' },
-            { text: 'Color scheme', link: '/en-US/theming/color-schemes' }
+            { text: 'Colors', link: '/en-US/theming/colors' },
+            { text: 'Color schemes', link: '/en-US/theming/color-schemes' }
           ]
         },
         {
@@ -63,8 +63,8 @@ export default defineConfig({
           items: [
             { text: 'CckConfigProvider', link: '/en-US/theming/cck-config-provider' },
             { text: 'Theme object', link: '/en-US/theming/theme-object' },
-            { text: 'Color', link: '/en-US/theming/colors' },
-            { text: 'Color scheme', link: '/en-US/theming/color-schemes' }
+            { text: 'Colors', link: '/en-US/theming/colors' },
+            { text: 'Color schemes', link: '/en-US/theming/color-schemes' }
           ]
         },
         {
