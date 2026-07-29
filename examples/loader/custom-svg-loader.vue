@@ -1,23 +1,17 @@
 <template>
   <svg
-    class="loader"
-    v-bind="$attrs"
-    :class="loaderClass"
+    v-bind="others"
+    :class="className"
     :style="{
       width: 'var(--loader-size)',
       height: 'var(--loader-size)',
-      stroke: 'var(--loader-color)'
+      stroke: 'var(--loader-color)',
     }"
     viewBox="0 0 45 45"
     xmlns="http://www.w3.org/2000/svg"
     stroke="#fff"
   >
-    <g
-      fill="none"
-      fillRule="evenodd"
-      transform="translate(1 1)"
-      strokeWidth="2"
-    >
+    <g fill="none" fillRule="evenodd" transform="translate(1 1)" strokeWidth="2">
       <circle cx="22" cy="22" r="6" strokeOpacity="0">
         <animate
           attributeName="r"
@@ -85,8 +79,7 @@
 </template>
 
 <script setup lang="ts">
-import { useNamespace } from '@cck-ui/hooks'
+import { LoaderProps } from '@cck-ui/core'
 
-const ns = useNamespace('loader')
-const loaderClass = ns.e('root')
+const { className, attributes, style, display, opacity, ...others } = defineProps<LoaderProps>()
 </script>
