@@ -9,7 +9,7 @@ Compose elements and components in a horizontal flex container
 
 ## Usage
 
-`Group` is a horizontal flex container. If you need a vertical flex container, use the Stack component insted. If you need to have full control over flex container properties, use the Flex component.
+`Group` is a horizontal flex container. If you need a vertical flex container, use the [Stack](./stack) component insted. If you need to have full control over flex container properties, use the Flex(WIP) component.
 
 <c-group>
   <c-button>First</c-button>
@@ -86,3 +86,41 @@ The `prevent-grow-overflow` prop allows you to control how `Group` children shou
 ## Browser support
 
 `Group` uses [flexbox gap](https://caniuse.com/flexbox-gap) to add spacing between children. In older browsers, `Group` children may not have spacing. You can install PostCSS [flex-gap-polyfill](https://github.com/gavinmcfarland/flex-gap-polyfill) to add support for older browsers.
+
+## API
+
+### Group Props
+
+|Name|Type|Description|Default value|
+|---|---|---|---|
+|align|AlignItem|Controls `align-items` CSS property|`'center'`|
+|gap|CSpacing|Key of `theme.spacing` or any valid CSS value for `gap`, numbers are converted to rem|`'md'`|
+|grow|boolean|Determines whether each child element should have `flex-grow: 1` style|`false`|
+
+## Styles API
+
+`Group` component supports [Styles API](../styles/styles-api), you can customize styles of any inner element. Follow [the documentation](../styles/styles-api) to learn how to use CSS modules, CSS variables and inline styles to get full control over component styles.
+
+### Group Styles API
+
+#### Selectors:
+
+|Selector|Static selector|Description|
+|---|---|---|
+|root|.c-Group-root|Root element|
+
+#### CSS variables:
+
+|Selector|Variable|Description|
+|---|---|---|
+|root|--group-align|Controls `align-items` property|
+||--group-justify|Controls `justify-content` property|
+||--group-gap|Controls `gap` property|
+||--group-wrap|Controls `flex-wrap` property|
+||--group-child-width| Controls `max-width` of child elements, applied when grow prop is set and `preventGrowOverflow` is `true`|
+
+#### Data attributes:
+
+|Selector|Attribute|Condition|
+|---|---|---|
+|root|data-grow|`grow` prop is set|
