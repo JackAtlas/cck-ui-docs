@@ -14,18 +14,18 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@cck-ui/core": "^0.4.10",
-    "@cck-ui/hooks": "^0.4.10",
-    "@lucide/vue": "^1.24.0",
-    "@vueuse/core": "^14.3.0",
+    "@cck-ui/core": "^0.6.1",
+    "@cck-ui/hooks": "^0.6.1",
+    "@lucide/vue": "^1.28.0",
+    "@vueuse/core": "^14.4.0",
     "clsx": "^2.1.1",
-    "es-toolkit": "^1.49.0",
+    "es-toolkit": "^1.50.0",
     "typescript": "^7.0.2"
   },
   "devDependencies": {
     "postcss-preset-cck": "^1.0.2",
     "postcss-simple-vars": "^7.0.1",
     "vitepress": "2.0.0-alpha.17",
-    "vue": "^3.5.39"
+    "vue": "^3.5.40"
   }
 }
