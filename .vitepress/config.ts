@@ -109,7 +109,10 @@ export default defineConfig({
         },
         {
           text: 'Buttons',
-          items: [{ text: 'Button', link: '/en-US/component/button' }]
+          items: [
+            { text: 'Button', link: '/en-US/component/button' },
+            {text: 'UnstyledButton', link: '/en-US/component/unstyled-button'}
+          ]
         },
         {
           text: 'Feedback',
