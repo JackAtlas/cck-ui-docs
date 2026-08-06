@@ -11,7 +11,7 @@ hero:
       link: /en-US/guide/cck-ui
     - theme: alt
       text: Components
-      link: /en-US/component/button
+      link: /en-US/component/get-started
 
 features:
   - title: Dual-response system
