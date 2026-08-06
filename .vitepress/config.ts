@@ -103,6 +103,7 @@ export default defineConfig({
             { text: 'Grid', link: '/en-US/component/grid' },
             { text: 'Group', link: '/en-US/component/group' },
             { text: 'SimpleGrid', link: '/en-US/component/simple-grid' },
+            { text: 'Splitter', link: '/en-US/component/splitter' },
             { text: 'Stack', link: '/en-US/component/stack' }
           ]
         },
