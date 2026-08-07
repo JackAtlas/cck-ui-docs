@@ -117,7 +117,10 @@ export default defineConfig({
         },
         {
           text: 'Feedback',
-          items: [{ text: 'Loader', link: '/en-US/component/loader' }]
+          items: [
+            { text: 'Alert', link: '/en-US/component/alert' },
+            { text: 'Loader', link: '/en-US/component/loader' }
+          ]
         },
         {
           text: 'Typography',
