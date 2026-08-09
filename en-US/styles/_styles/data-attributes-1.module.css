@@ -1,0 +1,40 @@
+.root {
+  border-top-left-radius: var(--c-radius-xl);
+  border-bottom-left-radius: var(--c-radius-xl);
+  padding-left: 4px;
+
+  &[data-disabled] {
+    @mixin light {
+      border: 1px solid var(--c-color-gray-2);
+    }
+
+    @mixin dark {
+      border: 1px solid var(--c-color-dark-4);
+    }
+
+    & .section[data-position='left'] {
+      opacity: 0.6;
+    }
+  }
+}
+
+.section {
+  &[data-position='left'] {
+    --section-size: calc(var(--button-height) - 8px);
+
+    background-color: var(--c-color-body);
+    color: var(--c-color-text);
+    height: var(--section-size);
+    width: var(--section-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--c-radius-xl);
+  }
+
+  &[data-position='right'] {
+    @mixin rtl {
+      transform: rotate(180deg);
+    }
+  }
+}
