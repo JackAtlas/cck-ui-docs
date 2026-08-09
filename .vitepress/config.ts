@@ -46,7 +46,9 @@ export default defineConfig({
             { text: 'rem, em and px units', link: '/en-US/styles/rem' },
             { text: 'style prop', link: '/en-US/styles/style' },
             { text: 'Responsive styles', link: '/en-US/styles/responsive' },
-            { text: 'Styles API', link: '/en-US/styles/styles-api' }
+            { text: 'Styles API', link: '/en-US/styles/styles-api' },
+            { text: 'data-* attributes', link: '/en-US/styles/data-attributes' },
+            { text: 'Style props', link: '/en-US/styles/style-props' }
           ]
         },
         {
@@ -78,7 +80,9 @@ export default defineConfig({
             { text: 'rem, em and px units', link: '/en-US/styles/rem' },
             { text: 'style prop', link: '/en-US/styles/style' },
             { text: 'Responsive styles', link: '/en-US/styles/responsive' },
-            { text: 'Styles API', link: '/en-US/styles/styles-api' }
+            { text: 'Styles API', link: '/en-US/styles/styles-api' },
+            { text: 'data-* attributes', link: '/en-US/styles/data-attributes' },
+            { text: 'Style props', link: '/en-US/styles/style-props' }
           ]
         },
         {
