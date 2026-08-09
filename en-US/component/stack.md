@@ -9,7 +9,7 @@ Compose elements and components in a vertical flex container
 
 ## Usage
 
-`Stack` is a vertical flex container. If you need a horizontal flex container, use [Group](./group) component instead. If you need to have full control over flex container properties, use Flex(WIP) component.
+`Stack` is a vertical flex container. If you need a horizontal flex container, use [Group](./group) component instead. If you need to have full control over flex container properties, use [Flex](./flex) component.
 
 <c-stack :h="300" bg="var(--c-color-body)" align="stretch" justify="center" gap="md">
   <c-button>1</c-button>

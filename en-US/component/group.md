@@ -9,7 +9,7 @@ Compose elements and components in a horizontal flex container
 
 ## Usage
 
-`Group` is a horizontal flex container. If you need a vertical flex container, use the [Stack](./stack) component insted. If you need to have full control over flex container properties, use the Flex(WIP) component.
+`Group` is a horizontal flex container. If you need a vertical flex container, use the [Stack](./stack) component insted. If you need to have full control over flex container properties, use the [Flex](./flex) component.
 
 <c-group>
   <c-button>First</c-button>

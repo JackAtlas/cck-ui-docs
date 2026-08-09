@@ -100,6 +100,7 @@ export default defineConfig({
             { text: 'AspectRatio', link: '/en-US/component/aspect-ratio' },
             { text: 'Center', link: '/en-US/component/center' },
             { text: 'Container', link: '/en-US/component/container' },
+            { text: 'Flex', link: '/en-US/component/flex' },
             { text: 'Grid', link: '/en-US/component/grid' },
             { text: 'Group', link: '/en-US/component/group' },
             { text: 'SimpleGrid', link: '/en-US/component/simple-grid' },
