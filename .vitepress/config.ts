@@ -11,7 +11,7 @@ export default defineConfig({
     nav: [
       { text: 'Guide', link: '/en-US/guide/cck-ui' },
       { text: 'Theming & Styles', link: '/en-US/theming/cck-config-provider' },
-      { text: 'Components', link: '/en-US/component/button' }
+      { text: 'Components', link: '/en-US/component/get-started' }
     ],
 
     sidebar: {
@@ -48,7 +48,8 @@ export default defineConfig({
             { text: 'Responsive styles', link: '/en-US/styles/responsive' },
             { text: 'Styles API', link: '/en-US/styles/styles-api' },
             { text: 'data-* attributes', link: '/en-US/styles/data-attributes' },
-            { text: 'Style props', link: '/en-US/styles/style-props' }
+            { text: 'Style props', link: '/en-US/styles/style-props' },
+            { text: 'Color functions', link: '/en-US/styles/color-functions' }
           ]
         },
         {
@@ -82,7 +83,8 @@ export default defineConfig({
             { text: 'Responsive styles', link: '/en-US/styles/responsive' },
             { text: 'Styles API', link: '/en-US/styles/styles-api' },
             { text: 'data-* attributes', link: '/en-US/styles/data-attributes' },
-            { text: 'Style props', link: '/en-US/styles/style-props' }
+            { text: 'Style props', link: '/en-US/styles/style-props' },
+            { text: 'Color functions', link: '/en-US/styles/color-functions' }
           ]
         },
         {
