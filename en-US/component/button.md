@@ -832,3 +832,85 @@ type ButtonVariant =
 | gradient     | CGradient         | Gradient configuration used when `variant="gradient"`                     | `theme.defaultGradient` |
 | radius       | CRadius \| number | Key of `theme.radius` or any valid CSS value to set `border-radius`       | `theme.defaultRadius`   |
 | size         | ButtonSize        | Controls section `height`, `font-size` and horitontal `padding`           | `'sm'`                  |
+
+## Styles API
+
+`Button` component supports [Styles API](../styles/styles-api), you can customize styles of any inner element. Follow [the documentation](../styles/styles-api) to learn how to use CSS modules, CSS variables and inline styles to get full control over component styles.
+
+### Button Styles API
+
+#### Selectors
+
+|Selector|Static selector|Description|
+|---|---|---|
+|root|.c-Button-root|Root element|
+|loader|.c-Button-loader|Loader component, displayed only when `loading` prop is set|
+|inner|.c-Button-inner|Contains all other elements, child of the `root` element|
+|section|.c-Button-section|Left and right sections of the button|
+|label|.c-Button-label|Button children|
+
+#### CSS variables
+
+|Selector|Variable|Description|
+|---|---|---|
+|root|--button-bg|Controls `background`|
+||--button-bd|Controls `border`|
+||--button-hover|Controls `background` when hovered|
+||--button-color|Controls text `color`|
+||--button-hover-color|Controls text `color` when hovered|
+||--button-radius|Controls `border-radius`|
+||--button-height|Controls `height` of the button|
+||--button-padding-x|Controls horizontal `padding` of the button|
+||--button-fz|Controls `font-size` of the button|
+||--button-justify|Controls `justify-content` of `inner` element|
+
+#### Data attributes
+
+|Selector|Attribute|Condition|Value|
+|---|---|---|---|
+|root|data-disabled|`disabled` prop is set|-|
+|root, label|data-loading|`loading` prop is set|-|
+|root|data-block|`fullWidth` prop is set|-|
+|root|data-with-left-section|`leftSection` is set|-|
+|root|data-with-right-section|`rightSection` is set|-|
+|section|data-position|-|Section position: left or right|
+
+### ButtonGroup Styles API
+
+#### Selectors
+
+|Selector|Static selector|Description|
+|---|---|---|
+|group|.c-ButtonGroup-group|Root element|
+
+#### CSS variables
+
+|Selector|Variable|Description|
+|---|---|---|
+|group|--button-border-width|`border-width` of child `Button` components|
+
+#### Data attributes
+
+|Selector|Attribute|Value|
+|---|---|---|
+|group|data-orientation|Value of `orientation` prop|
+
+### ButtonGroupSection Styles API
+
+#### Selectors
+
+|Selector|Static selector|Description|
+|---|---|---|
+|groupSection|.c-ButtonGroupSection-groupSection|Root element|
+
+#### CSS variables
+
+|Selector|Variable|Description|
+|---|---|---|
+|groupSection|--section-bg|Controls `background`|
+||--section-bd|Controls `border`|
+||--section-color|Controls text `color`|
+||--section-radius|Controls `border-radius`|
+||--section-height|Controls `height` of the section|
+||--section-padding-x|Controls horizontal `padding` of the section|
+||--section-fz|Controls `font-size` of the section|
