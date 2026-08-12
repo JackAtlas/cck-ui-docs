@@ -1,5 +1,5 @@
 <template>
-  <CckConfigProvider>
+  <CckConfigProvider :with-css-variables="true" :with-static-classes="true" :with-global-classes="true">
     <DefaultTheme.Layout />
   </CckConfigProvider>
 </template>
