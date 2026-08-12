@@ -1,5 +1,5 @@
 ---
-title: CloseButton
+title: Alert
 lang: en-US
 ---
 
