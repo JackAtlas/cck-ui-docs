@@ -127,7 +127,8 @@ export default defineConfig({
           items: [
             { text: 'Alert', link: '/en-US/component/alert' },
             { text: 'EmptyState', link: '/en-US/component/empty-state' },
-            { text: 'Loader', link: '/en-US/component/loader' }
+            { text: 'Loader', link: '/en-US/component/loader' },
+            { text: 'SemiCircleProgress', link: '/en-US/component/semi-circle-progress' }
           ]
         },
         {
