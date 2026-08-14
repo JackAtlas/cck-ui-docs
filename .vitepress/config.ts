@@ -97,8 +97,10 @@ export default defineConfig({
       ],
       '/en-US/component/': [
         {
-          text: 'Get Started',
-          link: '/en-US/component/get-started'
+          items: [
+            { text: 'Get started', link: '/en-US/component/get-started' },
+            { text: 'Default values', link: '/en-US/component/boolean-props-and-default-values' }
+          ]
         },
         {
           text: 'Layout',
