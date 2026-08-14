@@ -130,7 +130,8 @@ export default defineConfig({
             { text: 'Alert', link: '/en-US/component/alert' },
             { text: 'EmptyState', link: '/en-US/component/empty-state' },
             { text: 'Loader', link: '/en-US/component/loader' },
-            { text: 'SemiCircleProgress', link: '/en-US/component/semi-circle-progress' }
+            { text: 'SemiCircleProgress', link: '/en-US/component/semi-circle-progress' },
+            { text: 'Skeleton', link: '/en-US/component/skeleton' }
           ]
         },
         {
