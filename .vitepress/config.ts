@@ -140,7 +140,10 @@ export default defineConfig({
         },
         {
           text: 'Miscellaneous',
-          items: [{text: 'Box', link: '/en-US/component/box'}]
+          items: [
+            { text: 'Box', link: '/en-US/component/box' },
+            { text: 'Paper', link: '/en-US/component/paper' }
+          ]
         }
       ]
     },
