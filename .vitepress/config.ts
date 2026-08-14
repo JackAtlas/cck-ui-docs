@@ -9,19 +9,19 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Guide', link: '/en-US/guide/cck-ui' },
+      { text: 'Guides', link: '/en-US/guides/cck-ui' },
       { text: 'Theming & Styles', link: '/en-US/theming/cck-config-provider' },
       { text: 'Components', link: '/en-US/component/get-started' }
     ],
 
     sidebar: {
-      '/en-US/guide/': [
+      '/en-US/guides/': [
         {
           text: 'Introduction',
           items: [
-            { text: 'Welcome to CCK UI', link: '/en-US/guide/cck-ui' },
-            { text: 'Browser support', link: '/en-US/guide/browser-support' },
-            { text: 'About CCK UI', link: '/en-US/guide/about' }
+            { text: 'Welcome to CCK UI', link: '/en-US/guides/cck-ui' },
+            { text: 'Browser support', link: '/en-US/guides/browser-support' },
+            { text: 'About CCK UI', link: '/en-US/guides/about' }
           ]
         }
       ],
