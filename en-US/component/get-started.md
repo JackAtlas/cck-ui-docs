@@ -17,7 +17,7 @@ pnpm add @cck-ui/core @cck-ui/hooks
 
 ## Usage
 
-Follow the [getting started guide](../guide/cck-ui) to learn how to complete the CCK UI setup in your project.
+Follow the [getting started guide](../guides/cck-ui) to learn how to complete the CCK UI setup in your project.
 
 ## License
 
