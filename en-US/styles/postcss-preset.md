@@ -23,7 +23,7 @@ pnpm add --dev postcss-preset-cck
 
 ## Usage
 
-Note that setting up PostCSS may be different depending on your build tool/framework. Check a [dedicated framework guide](../guide/cck-ui) to learn more. Add `postcss-preset-cck` to your postcss setting:
+Note that setting up PostCSS may be different depending on your build tool/framework. Check a [dedicated framework guide](../guides/cck-ui) to learn more. Add `postcss-preset-cck` to your postcss setting:
 
 ```ts
 // For example, in your vite setup:
