@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@cck-ui/core':
-        specifier: ^0.16.0
-        version: 0.16.0(vue@3.5.41(typescript@7.0.2))
+        specifier: ^0.17.0
+        version: 0.17.0(vue@3.5.41(typescript@7.0.2))
       '@cck-ui/hooks':
-        specifier: ^0.16.0
-        version: 0.16.0(vue@3.5.41(typescript@7.0.2))
+        specifier: ^0.17.0
+        version: 0.17.0(vue@3.5.41(typescript@7.0.2))
       '@lucide/vue':
         specifier: ^1.31.0
         version: 1.31.0(vue@3.5.41(typescript@7.0.2))
@@ -62,13 +62,13 @@ packages:
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
-  '@cck-ui/core@0.16.0':
-    resolution: {integrity: sha512-w+PPqi07YXy2Zxt1q6zvbKNRgR9WF6DslXdWUhAK7cFAOjCVl2AI/04diPyWfh/aptAju+u3vULZOt1Es/H6yA==}
+  '@cck-ui/core@0.17.0':
+    resolution: {integrity: sha512-qo73k+JP+5n1RPGNqwL77cPdFGr4pkwVP+7hJiStidVotPpn9dcuF8Ki170UAMNAsl2n3WOGxVtkbVRD6m8mZA==}
     peerDependencies:
       vue: ^3.5.39
 
-  '@cck-ui/hooks@0.16.0':
-    resolution: {integrity: sha512-w3pSSEVFnff9C1beYSmGFMKLnzYmRSmen0zB39FXhBC+DTs7n0/y606SrMjrtDEt1pmz0zP9GL37LB9zxjDZBQ==}
+  '@cck-ui/hooks@0.17.0':
+    resolution: {integrity: sha512-FlxqOJN9N9Ll8NpWz0HuQkKbJl32Bdr1sJKTezxB5USmfhh6cjtg+oI4QAZlBgocipVNunvHnvvtWu3Y6y0CAg==}
     peerDependencies:
       vue: ^3.5.39
 
@@ -1131,7 +1131,7 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@cck-ui/core@0.16.0(vue@3.5.41(typescript@7.0.2))':
+  '@cck-ui/core@0.17.0(vue@3.5.41(typescript@7.0.2))':
     dependencies:
       '@ctrl/tinycolor': 4.2.0
       '@vueuse/core': 14.4.0(vue@3.5.41(typescript@7.0.2))
@@ -1139,7 +1139,7 @@ snapshots:
       type-fest: 5.8.0
       vue: 3.5.41(typescript@7.0.2)
 
-  '@cck-ui/hooks@0.16.0(vue@3.5.41(typescript@7.0.2))':
+  '@cck-ui/hooks@0.17.0(vue@3.5.41(typescript@7.0.2))':
     dependencies:
       vue: 3.5.41(typescript@7.0.2)
 
