@@ -13,6 +13,6 @@ CCK UI is built and maintained by [JackAtlas](https://jackatlas.xyz).
 
 ## Stats
 
-- 31 components (all `@cck-ui/*` packages)
+- 34 components (all `@cck-ui/*` packages)
 - 2 hooks (`@cck-ui/hooks` package)
-- 1215 tests
+- 1322 tests
