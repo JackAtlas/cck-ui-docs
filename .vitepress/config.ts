@@ -119,6 +119,7 @@ export default defineConfig({
         {
           text: 'Buttons',
           items: [
+            { text: 'ActionIcon', link: '/en-US/component/action-icon' },
             { text: 'Button', link: '/en-US/component/button' },
             { text: 'CloseButton', link: '/en-US/component/close-button' },
             { text: 'UnstyledButton', link: '/en-US/component/unstyled-button' }

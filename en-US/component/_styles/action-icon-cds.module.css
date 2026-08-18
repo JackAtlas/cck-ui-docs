@@ -1,0 +1,7 @@
+.button {
+  &:disabled,
+  &[data-disabled] {
+    border-color: light-dark(var(--c-color-gray-3), var(--c-color-dark-4));
+    background-color: transparent;
+  }
+}
