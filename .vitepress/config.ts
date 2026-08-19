@@ -136,6 +136,12 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Data display',
+          items: [
+            { text: 'Image', link: '/en-US/component/image' }
+          ]
+        },
+        {
           text: 'Typography',
           items: [{text: 'Text', link: '/en-US/component/text'}]
         },
