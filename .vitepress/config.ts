@@ -122,6 +122,7 @@ export default defineConfig({
             { text: 'ActionIcon', link: '/en-US/component/action-icon' },
             { text: 'Button', link: '/en-US/component/button' },
             { text: 'CloseButton', link: '/en-US/component/close-button' },
+            { text: 'CopyButton', link: '/en-US/component/copy-button' },
             { text: 'UnstyledButton', link: '/en-US/component/unstyled-button' }
           ]
         },
