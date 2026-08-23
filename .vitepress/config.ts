@@ -123,6 +123,7 @@ export default defineConfig({
             { text: 'Button', link: '/en-US/component/button' },
             { text: 'CloseButton', link: '/en-US/component/close-button' },
             { text: 'CopyButton', link: '/en-US/component/copy-button' },
+            { text: 'FileButton', link: '/en-US/component/file-button' },
             { text: 'UnstyledButton', link: '/en-US/component/unstyled-button' }
           ]
         },
