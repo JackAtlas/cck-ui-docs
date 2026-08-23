@@ -3,7 +3,7 @@ title: Get started
 lang: en-US
 ---
 
-CCK UI Core components
+# CCK UI Core components
 
 [![NPM Downloads](https://img.shields.io/npm/dm/%40cck-ui%2Fcore?style=for-the-badge)](https://www.npmjs.com/package/@cck-ui/core)
 
