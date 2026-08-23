@@ -11,6 +11,7 @@ export default defineConfig({
     nav: [
       { text: 'Guides', link: '/en-US/guides/cck-ui' },
       { text: 'Theming & Styles', link: '/en-US/theming/cck-config-provider' },
+      { text: 'Hooks', link: '/en-US/hooks/get-started' },
       { text: 'Components', link: '/en-US/component/get-started' }
     ],
 
@@ -92,6 +93,19 @@ export default defineConfig({
           items: [
             { text: 'Styles performance', link: '/en-US/styles/styles-performance' },
             { text: 'Polymorphic components', link: '/en-US/styles/polymorphic' }
+          ]
+        }
+      ],
+      '/en-US/hooks': [
+        {
+          items: [
+            { text: 'Get started', link: '/en-US/hooks/get-started' }
+          ]
+        },
+        {
+          text: 'Utilities',
+          items: [
+            { text: 'use-clipboard', link: '/en-US/hooks/use-clipboard.md' }
           ]
         }
       ],
