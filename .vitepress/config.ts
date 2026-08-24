@@ -159,7 +159,10 @@ export default defineConfig({
         },
         {
           text: 'Typography',
-          items: [{text: 'Text', link: '/en-US/component/text'}]
+          items: [
+            { text: 'Text', link: '/en-US/component/text' },
+            { text: 'Typography', link: '/en-US/component/typography' }
+          ]
         },
         {
           text: 'Miscellaneous',
