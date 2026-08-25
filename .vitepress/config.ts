@@ -103,6 +103,12 @@ export default defineConfig({
           ]
         },
         {
+          text: 'State management',
+          items: [
+            { text: 'use-disclosure', link: '/en-US/hooks/use-disclosure' }
+          ]
+        },
+        {
           text: 'Utilities',
           items: [
             { text: 'use-clipboard', link: '/en-US/hooks/use-clipboard.md' }
