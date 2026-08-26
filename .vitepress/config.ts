@@ -174,6 +174,7 @@ export default defineConfig({
           text: 'Miscellaneous',
           items: [
             { text: 'Box', link: '/en-US/component/box' },
+            { text: 'Divider', link: '/en-US/component/divider' },
             { text: 'Paper', link: '/en-US/component/paper' },
             { text: 'VisuallyHidden', link: '/en-US/component/visually-hidden' }
           ]
