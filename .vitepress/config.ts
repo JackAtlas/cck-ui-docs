@@ -176,6 +176,7 @@ export default defineConfig({
             { text: 'Box', link: '/en-US/component/box' },
             { text: 'Divider', link: '/en-US/component/divider' },
             { text: 'Paper', link: '/en-US/component/paper' },
+            { text: 'Portal', link: '/en-US/component/portal' },
             { text: 'VisuallyHidden', link: '/en-US/component/visually-hidden' }
           ]
         }
