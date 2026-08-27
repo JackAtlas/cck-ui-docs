@@ -148,6 +148,12 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Navigation',
+          items: [
+            { text: 'Anchor', link: '/en-US/component/anchor' }
+          ]
+        },
+        {
           text: 'Feedback',
           items: [
             { text: 'Alert', link: '/en-US/component/alert' },
