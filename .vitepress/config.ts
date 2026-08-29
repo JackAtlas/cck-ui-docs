@@ -151,7 +151,8 @@ export default defineConfig({
           text: 'Navigation',
           items: [
             { text: 'Anchor', link: '/en-US/component/anchor' },
-            { text: 'Breadcrumbs', link: '/en-US/component/breadcrumbs' }
+            { text: 'Breadcrumbs', link: '/en-US/component/breadcrumbs' },
+            { text: 'Burger', link: '/en-US/component/burger' }
           ]
         },
         {
