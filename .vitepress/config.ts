@@ -103,6 +103,12 @@ export default defineConfig({
           ]
         },
         {
+          text: 'UI and Dom',
+          items: [
+            { text: 'use-window-scroll', link: '/en-US/hooks/use-window-scroll' }
+          ]
+        },
+        {
           text: 'State management',
           items: [
             { text: 'use-disclosure', link: '/en-US/hooks/use-disclosure' }
