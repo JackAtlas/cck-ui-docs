@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@cck-ui/core':
-        specifier: ^0.28.0
-        version: 0.28.0(vue@3.5.42(typescript@7.0.2))
+        specifier: ^0.30.0
+        version: 0.30.0(vue@3.5.42(typescript@7.0.2))
       '@cck-ui/hooks':
-        specifier: ^0.28.0
-        version: 0.28.0(vue@3.5.42(typescript@7.0.2))
+        specifier: ^0.30.0
+        version: 0.30.0(vue@3.5.42(typescript@7.0.2))
       '@lucide/vue':
-        specifier: ^1.34.0
-        version: 1.34.0(vue@3.5.42(typescript@7.0.2))
+        specifier: ^1.35.0
+        version: 1.35.0(vue@3.5.42(typescript@7.0.2))
       '@vueuse/core':
         specifier: ^14.4.0
         version: 14.4.0(vue@3.5.42(typescript@7.0.2))
@@ -24,8 +24,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       es-toolkit:
-        specifier: ^1.51.0
-        version: 1.51.0
+        specifier: ^1.52.0
+        version: 1.52.0
       typescript:
         specifier: ^7.0.2
         version: 7.0.2
@@ -62,13 +62,13 @@ packages:
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
-  '@cck-ui/core@0.28.0':
-    resolution: {integrity: sha512-R9mOIf+dV83zn18py1pUCD4n+RhHMEvbQpoGKvz8ZUBRzeQ29Bt9LiCrzTtZli8xjfq+UKIu5oxVd6tZrmujTw==}
+  '@cck-ui/core@0.30.0':
+    resolution: {integrity: sha512-4yPFGUwTcUFak7q5bMRVNkAFARNfywhPKlGeZ2LKzs5ojSvhUGTvzbSQ5Cj2bywj/UoAJySFsvp1ZSJOt+UbKA==}
     peerDependencies:
       vue: ^3.5.39
 
-  '@cck-ui/hooks@0.28.0':
-    resolution: {integrity: sha512-cMFfimQ+M0548Y6dBjIRV7Y33JigXLXoB+0FihlqSenA9Wl7Zg+ZhfikXUdhD+U+4+qgRyoYYBKxqGA6tNI8iA==}
+  '@cck-ui/hooks@0.30.0':
+    resolution: {integrity: sha512-nm7iga42MMZo/k5lj0FaS1wFyKI3YcIc65WMAJxoJXfCRdOv/kbS7Afd3J9FKvItDaPAXuszM+oJXaxulMHgPA==}
     peerDependencies:
       vue: ^3.5.39
 
@@ -250,8 +250,8 @@ packages:
   '@jridgewell/sourcemap-codec@1.6.0':
     resolution: {integrity: sha512-T7jf+5zgsZHwNJ4lvQ7/aezbyk0nNX+zJVWpmHA7VYsEx7a7qr5Rg5IbtJFqkgze5Y2sruq1RUY8Q837Od7iFw==}
 
-  '@lucide/vue@1.34.0':
-    resolution: {integrity: sha512-eB48kx1oe9O6mJAg0gFWgv66y4rhYJYuhfWF8wIz/YBFPDDHWHI7+kRJpkvz/8kePY6ddbwxXIGfP8E54wlGhA==}
+  '@lucide/vue@1.35.0':
+    resolution: {integrity: sha512-HTeJaMU7EUaeRqbZqaHyRg60UjiRdBAGwfWQRzORAspHh/H1rdnM/fdTzYX+SdL0OiUcAw+mM49G9D7zGgHzZg==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -819,8 +819,8 @@ packages:
     resolution: {integrity: sha512-TWrgLOFUQTH994YUyl1yT4uyavY5nNB5muff+RtWaqNVCAK408b5ZnnbNAUEWLTCpum9w6arT70i1XdQ4UeOPA==}
     engines: {node: '>=0.12'}
 
-  es-toolkit@1.51.0:
-    resolution: {integrity: sha512-zC2lQGkM7QX+Gm6iM3+WIdZJzthsEd14LvRNJneSO2hzyz/zNBENR8+YXWo1cKxgPBtV6ksPYHELbcwBRzmdCw==}
+  es-toolkit@1.52.0:
+    resolution: {integrity: sha512-XTNEJQh1tY1ZJVcf6ayP/2n4ZPyaHlW2FWs7xvw5ddPuhUVjLD3olQVQS7kf58JbAB48iL0uL/jerTrjtV3lDA==}
 
   esbuild@0.28.1:
     resolution: {integrity: sha512-HrJrvZv5ayxBzPfwphOoNzkzOIIlifzk0KJrGK2c8R4+LKpMtpYLQeUdjnwjWv/LZlkH2laZk+4w78pi99D4Vw==}
@@ -1131,7 +1131,7 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@cck-ui/core@0.28.0(vue@3.5.42(typescript@7.0.2))':
+  '@cck-ui/core@0.30.0(vue@3.5.42(typescript@7.0.2))':
     dependencies:
       '@ctrl/tinycolor': 4.2.0
       '@vueuse/core': 14.4.0(vue@3.5.42(typescript@7.0.2))
@@ -1139,7 +1139,7 @@ snapshots:
       type-fest: 5.8.0
       vue: 3.5.42(typescript@7.0.2)
 
-  '@cck-ui/hooks@0.28.0(vue@3.5.42(typescript@7.0.2))':
+  '@cck-ui/hooks@0.30.0(vue@3.5.42(typescript@7.0.2))':
     dependencies:
       vue: 3.5.42(typescript@7.0.2)
 
@@ -1237,7 +1237,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.6.0': {}
 
-  '@lucide/vue@1.34.0(vue@3.5.42(typescript@7.0.2))':
+  '@lucide/vue@1.35.0(vue@3.5.42(typescript@7.0.2))':
     dependencies:
       vue: 3.5.42(typescript@7.0.2)
 
@@ -1645,7 +1645,7 @@ snapshots:
 
   entities@7.0.1: {}
 
-  es-toolkit@1.51.0: {}
+  es-toolkit@1.52.0: {}
 
   esbuild@0.28.1:
     optionalDependencies:
