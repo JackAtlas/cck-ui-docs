@@ -180,6 +180,7 @@ export default defineConfig({
         {
           text: 'Data display',
           items: [
+            { text: 'Avatar', link: '/en-US/component/avatar' },
             { text: 'Image', link: '/en-US/component/image' }
           ]
         },
