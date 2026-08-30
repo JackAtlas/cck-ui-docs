@@ -172,6 +172,12 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Overlays',
+          items: [
+            { text: 'Affix', link: '/en-US/component/affix' }
+          ]
+        },
+        {
           text: 'Data display',
           items: [
             { text: 'Image', link: '/en-US/component/image' }
