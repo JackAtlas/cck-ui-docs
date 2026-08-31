@@ -181,6 +181,7 @@ export default defineConfig({
           text: 'Data display',
           items: [
             { text: 'Avatar', link: '/en-US/component/avatar' },
+            { text: 'BackgroundImage', link: '/en-US/component/background-image' },
             { text: 'Image', link: '/en-US/component/image' }
           ]
         },
