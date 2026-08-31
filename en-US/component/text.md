@@ -107,7 +107,7 @@ Use the `text-wrap` prop to control the `text-wrap` CSS property. For example, `
 
 ## Polymorphic component
 
-`Text` is a polymorphic component - its defaut root element is `p`, but it can be changed to any other element or component with the `component` prop:
+`Text` is a polymorphic component - its defaut root element is `p`, but it can be changed to any other element or component with the `tag` prop:
 
 ```vue
 <template>
@@ -125,3 +125,65 @@ Use the `span` props as a shorthand for `tag="span"`:
   <c-text tag="span">Same as above</c-text>
 </template>
 ```
+
+## Props
+
+### Text props
+
+|Name|Type|Description|Default value|
+|---|---|---|---|
+|gradient|CGradient|Gradient configuration, ignored when `variant` is not `gradient`|`theme.defaultGradient`|
+|inherit|boolean|Determines whether font properties should be inherited from the parent|`false`|
+|inline|boolean|Sets `line-height` to 1 for centering|`false`|
+|lineClamp|number|Number of lines after which Text will be truncated||
+|size|CSize \| (string & {})|Controls `font-size` and `line-height`|`'md'`|
+|span|boolean|Shorthand for `component="span"`||
+|textWrap|"wrap" \| "nowrap" \| "balance" \| "pretty" \| "stable"|Controls `text-wrap` CSS property||
+|truncate|TextTruncate|Side on which Text must be truncated, if `true`, text is truncated from the start||
+
+## Styles API
+
+`Text` component supports [Styles API](../styles/styles-api), you can customize styles of any inner element. Follow [the documentation](../styles/styles-api) to learn how to use CSS modules, CSS variables and inline styles to get full control over component styles.
+
+### Text Styles API
+
+#### Selectors
+
+|Selector|Static selector|Description|
+|---|---|---|
+|root|.c-Text-root|Root element|
+
+#### CSS variables
+
+<table>
+  <thead>
+    <tr>
+      <th>Selector</th>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="5">root</td>
+      <td>--text-fz</td>
+      <td>Controls `font-size` property</td>
+    </tr>
+    <tr>
+      <td>--text-lh</td>
+      <td>Controls `font-size` property</td>
+    </tr>
+    <tr>
+      <td>--text-gradient</td>
+      <td>Controls `font-size` property</td>
+    </tr>
+    <tr>
+      <td>--text-line-clamp</td>
+      <td>Controls `font-size` property</td>
+    </tr>
+    <tr>
+      <td>--text-text-wrap</td>
+      <td>Controls `font-size` property</td>
+    </tr>
+  </tbody>
+</table>
