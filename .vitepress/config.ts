@@ -182,6 +182,7 @@ export default defineConfig({
           items: [
             { text: 'Avatar', link: '/en-US/component/avatar' },
             { text: 'BackgroundImage', link: '/en-US/component/background-image' },
+            { text: 'Badge', link: '/en-US/component/badge' },
             { text: 'Image', link: '/en-US/component/image' }
           ]
         },
