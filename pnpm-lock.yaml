@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@cck-ui/core':
-        specifier: ^0.33.0
-        version: 0.33.0(vue@3.5.42(typescript@7.0.2))
+        specifier: ^0.34.0
+        version: 0.34.0(vue@3.5.42(typescript@7.0.2))
       '@cck-ui/hooks':
-        specifier: ^0.33.0
-        version: 0.33.0(vue@3.5.42(typescript@7.0.2))
+        specifier: ^0.34.0
+        version: 0.34.0(vue@3.5.42(typescript@7.0.2))
       '@lucide/vue':
         specifier: ^1.37.0
         version: 1.37.0(vue@3.5.42(typescript@7.0.2))
@@ -62,13 +62,13 @@ packages:
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
-  '@cck-ui/core@0.33.0':
-    resolution: {integrity: sha512-j6vD0g/vtp4+nkQY6jEWA9rV0SMnm44PIf7OqBC6f/kGPR99/HKKdMtpyu3VGWXhIzw20Zp7DcFWqbMH2sMmLQ==}
+  '@cck-ui/core@0.34.0':
+    resolution: {integrity: sha512-h+ds/SgGoWx5ywh9i8nqeYyaPV10mKk/fUbpmg0Nj8l9LDsklA7DK+FufqTM9QJz8O48z02C129nZxcN5VXwRQ==}
     peerDependencies:
       vue: ^3.5.39
 
-  '@cck-ui/hooks@0.33.0':
-    resolution: {integrity: sha512-Tp6HouHl/16aiEgfCiPWVWHws74R8LqFUnQEy+5cLzrKNsR8WnJfP5FgzpHVD0vDue1M3yghEiQVUmjbRDKXhA==}
+  '@cck-ui/hooks@0.34.0':
+    resolution: {integrity: sha512-GB0Totb6u7lpp87zHNhf7wCO+cimwCX+/9shKMA2Yus7Jg23wJCOWrG7PFolb6DlLN0L6fRUXx34G8pJg6qejw==}
     peerDependencies:
       vue: ^3.5.39
 
@@ -1017,8 +1017,8 @@ packages:
   trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
 
-  type-fest@5.8.0:
-    resolution: {integrity: sha512-YGYEVz3Fm5iy/AybuA0oyNFq7H4CgQNfRp/qfe8nurE1kuCeNm3/vfm9X4Mtl+qLyaKJUh5xrFZwogr41SMjYA==}
+  type-fest@5.9.0:
+    resolution: {integrity: sha512-yANm3Jr3GiJ1qgJlxGAVxTOIcEOk1rhQHamlXtnrCK7EHP4HeM9OGxtMg/W7HFdrVzw/ZWJKGVIJusVH85sLtw==}
     engines: {node: '>=20'}
 
   typescript@7.0.2:
@@ -1131,15 +1131,15 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@cck-ui/core@0.33.0(vue@3.5.42(typescript@7.0.2))':
+  '@cck-ui/core@0.34.0(vue@3.5.42(typescript@7.0.2))':
     dependencies:
       '@ctrl/tinycolor': 4.2.0
       '@vueuse/core': 14.4.0(vue@3.5.42(typescript@7.0.2))
       clsx: 2.1.1
-      type-fest: 5.8.0
+      type-fest: 5.9.0
       vue: 3.5.42(typescript@7.0.2)
 
-  '@cck-ui/hooks@0.33.0(vue@3.5.42(typescript@7.0.2))':
+  '@cck-ui/hooks@0.34.0(vue@3.5.42(typescript@7.0.2))':
     dependencies:
       vue: 3.5.42(typescript@7.0.2)
 
@@ -1907,7 +1907,7 @@ snapshots:
 
   trim-lines@3.0.1: {}
 
-  type-fest@5.8.0:
+  type-fest@5.9.0:
     dependencies:
       tagged-tag: 1.0.0
 
