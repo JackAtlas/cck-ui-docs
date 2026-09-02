@@ -184,6 +184,7 @@ export default defineConfig({
             { text: 'BackgroundImage', link: '/en-US/component/background-image' },
             { text: 'Badge', link: '/en-US/component/badge' },
             { text: 'Card', link: '/en-US/component/card' },
+            { text: 'ColorSwatch', link: '/en-US/component/color-swatch' },
             { text: 'Image', link: '/en-US/component/image' }
           ]
         },
