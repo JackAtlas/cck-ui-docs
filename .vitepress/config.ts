@@ -186,7 +186,8 @@ export default defineConfig({
             { text: 'Card', link: '/en-US/component/card' },
             { text: 'ColorSwatch', link: '/en-US/component/color-swatch' },
             { text: 'DataList', link: '/en-US/component/data-list' },
-            { text: 'Image', link: '/en-US/component/image' }
+            { text: 'Image', link: '/en-US/component/image' },
+            { text: 'Indicator', link: '/en-US/component/indicator' },
           ]
         },
         {
