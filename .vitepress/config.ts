@@ -195,6 +195,7 @@ export default defineConfig({
         {
           text: 'Typography',
           items: [
+            { text: 'Blockquote', link: '/en-US/component/blockquote' },
             { text: 'Text', link: '/en-US/component/text' },
             { text: 'Typography', link: '/en-US/component/typography' }
           ]
