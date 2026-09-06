@@ -13,11 +13,11 @@ Use the highlight component to highlight substrings within text using the HTML `
 
 Pass the text as children and specify which substring(s) to highlight with the `highlight` prop. Matching is **case-insensitive** and **accent-insensitive** by default, and highlights all occurrences of the matched substring. Use the `caseInsensitive` and `accentInsensitive` props to opt out.
 
-<c-highlight children="Highlight This, definitely THIS and also this!" highlight="this" :case-insensitive="true"></c-highlight>
+<c-highlight highlight="this" :case-insensitive="true">Highlight This, definitely THIS and also this!</c-highlight>
 
 ```vue
 <template>
-  <c-highlight children="Highlight This, definitely THIS and also this!" highlight="this" :case-insensitive="true"></c-highlight>
+  <c-highlight highlight="this" :case-insensitive="true">Highlight This, definitely THIS and also this!</c-highlight>
 </template>
 ```
 
@@ -37,11 +37,11 @@ Set `:case-insensitive="false"` to only match substrings with the same casing as
 <c-stack gap="md">
   <div>
     <c-text size="sm" :fw="500" :mb="5">With case-insensitive matching (default)</c-text>
-    <c-highlight children="Highlight This, definitely THIS and also this!" highlight="this" :case-insensitive="true"></c-highlight>
+    <c-highlight highlight="this" :case-insensitive="true">Highlight This, definitely THIS and also this!</c-highlight>
   </div>
   <div>
     <c-text size="sm" :fw="500" :mb="5">With case-sensitive matching (:case-insensitive="false")</c-text>
-    <c-highlight children="Highlight This, definitely THIS and also this!" highlight="this" :case-insensitive="false"></c-highlight>
+    <c-highlight highlight="this" :case-insensitive="false">Highlight This, definitely THIS and also this!</c-highlight>
   </div>
 </c-stack>
 
@@ -50,11 +50,11 @@ Set `:case-insensitive="false"` to only match substrings with the same casing as
   <c-stack gap="md">
     <div>
       <c-text size="sm" :fw="500" :mb="5">With case-insensitive matching (default)</c-text>
-      <c-highlight children="Highlight This, definitely THIS and also this!" highlight="this" :case-insensitive="true"></c-highlight>
+      <c-highlight highlight="this" :case-insensitive="true">Highlight This, definitely THIS and also this!</c-highlight>
     </div>
     <div>
       <c-text size="sm" :fw="500" :mb="5">With case-sensitive matching (:case-insensitive="false")</c-text>
-      <c-highlight children="Highlight This, definitely THIS and also this!" highlight="this" :case-insensitive="false"></c-highlight>
+      <c-highlight highlight="this" :case-insensitive="false">Highlight This, definitely THIS and also this!</c-highlight>
     </div>
   </c-stack>
 </template>
@@ -67,11 +67,11 @@ Set `:accent-insensitie="false"` to require accented characters in the text to m
 <c-stack gap="md">
   <div>
     <c-text size="sm" :fw="500" :mb="5">With accent-insensitive matching (default)</c-text>
-    <c-highlight children="We visited café and cafe" highlight="cafe" :accent-insensitive="true" :case-insensitive="true"></c-highlight>
+    <c-highlight highlight="cafe" :accent-insensitive="true" :case-insensitive="true">We visited café and cafe</c-highlight>
   </div>
   <div>
     <c-text size="sm" :fw="500" :mb="5">With accent-sensitive matching (:accent-insensitive="false")</c-text>
-    <c-highlight children="We visited café and cafe" highlight="cafe" :accent-insensitive="false" :case-insensitive="true"></c-highlight>
+    <c-highlight highlight="cafe" :accent-insensitive="false" :case-insensitive="true">We visited café and cafe</c-highlight>
   </div>
 </c-stack>
 
@@ -80,11 +80,11 @@ Set `:accent-insensitie="false"` to require accented characters in the text to m
   <c-stack gap="md">
     <div>
       <c-text size="sm" :fw="500" :mb="5">With accent-insensitive matching (default)</c-text>
-      <c-highlight children="We visited café and cafe" highlight="cafe" :accent-insensitive="true" :case-insensitive="true"></c-highlight>
+      <c-highlight highlight="cafe" :accent-insensitive="true" :case-insensitive="true">We visited café and cafe</c-highlight>
     </div>
     <div>
       <c-text size="sm" :fw="500" :mb="5">With accent-sensitive matching (:accent-insensitive="false")</c-text>
-      <c-highlight children="We visited café and cafe" highlight="cafe" :accent-insensitive="false" :case-insensitive="true"></c-highlight>
+      <c-highlight highlight="cafe" :accent-insensitive="false" :case-insensitive="true">We visited café and cafe</c-highlight>
     </div>
   </c-stack>
 </template>
@@ -94,13 +94,25 @@ Set `:accent-insensitie="false"` to require accented characters in the text to m
 
 To highlight multiple substrings, provide an array of values. When multiple substrings are provided, longer matches take precedence to avoid partial overlaps.
 
-<c-highlight children="Highlight this and also that" :highlight="['this', 'that']"></c-highlight>
+<c-highlight :highlight="['this', 'that']">Highlight this and also that</c-highlight>
+
+```vue
+<template>
+  <c-highlight :highlight="['this', 'that']">Highlight this and also that</c-highlight>
+</template>
+```
 
 ## Custom colors per term
 
 You can assign different colors to different highlighted terms by providing an array of objects with `text` and `color` properties:
 
-<c-highlight children="Error: Invalid input. Warning: Check this field. Success: All tests passed." :highlight="[{text: 'error', color: 'red'}, {text: 'warning', color: 'yellow'}, {text: 'success', color: 'green'}]"></c-highlight>
+<c-highlight :case-insensitive="true" :highlight="[{text: 'error', color: 'red'}, {text: 'warning', color: 'yellow'}, {text: 'success', color: 'green'}]">Error: Invalid input. Warning: Check this field. Success: All tests passed.</c-highlight>
+
+```vue
+<template>
+  <c-highlight :case-insensitive="true" :highlight="[{text: 'error', color: 'red'}, {text: 'warning', color: 'yellow'}, {text: 'success', color: 'green'}]">Error: Invalid input. Warning: Check this field. Success: All tests passed.</c-highlight>
+</template>
+```
 
 ## Whole word matching
 
@@ -109,11 +121,11 @@ Use the `wholeWord` prop to match only complete words. When enabled, 'the' will 
 <c-stack gap="md">
   <div>
     <c-text size="sm" :fw="500" :mb="5">With whole-word matching (:whole-word="true")</c-text>
-    <c-highlight children="The theme is there" highlight="the" :case-insensitive="true" :whole-word="true"></c-highlight>
+    <c-highlight highlight="the" :case-insensitive="true" :whole-word="true">The theme is there</c-highlight>
   </div>
   <div>
     <c-text size="sm" :fw="500" :mb="5">Without whole word matching (default)</c-text>
-    <c-highlight children="The theme is there" highlight="the" :case-insensitive="true"></c-highlight>
+    <c-highlight highlight="the" :case-insensitive="true">The theme is there</c-highlight>
   </div>
 </c-stack>
 
@@ -122,11 +134,11 @@ Use the `wholeWord` prop to match only complete words. When enabled, 'the' will 
   <c-stack gap="md">
     <div>
       <c-text size="sm" :fw="500" :mb="5">With whole-word matching (:whole-word="true")</c-text>
-      <c-highlight children="The theme is there" highlight="the" :case-insensitive="true" :whole-word="true"></c-highlight>
+      <c-highlight highlight="the" :case-insensitive="true" :whole-word="true">The theme is there</c-highlight>
     </div>
     <div>
       <c-text size="sm" :fw="500" :mb="5">Without whole word matching (default)</c-text>
-      <c-highlight children="The theme is there" highlight="the" :case-insensitive="true"></c-highlight>
+      <c-highlight highlight="the" :case-insensitive="true">The theme is there</c-highlight>
     </div>
   </c-stack>
 </template>
@@ -136,13 +148,19 @@ Use the `wholeWord` prop to match only complete words. When enabled, 'the' will 
 
 Default [Mark](./mark) styles can be overwritten with the `highlightStyles` prop, which accepts either an object with styles or a function that receives the theme as a parameter and returns styles:
 
-<c-highlight children="You can change styles of highlighted part if you do not like default styles" :highlight="['highlighted', 'default']" :highlight-styles="{ backgroundImage: 'linear-gradient(45deg, var(--c-color-cyan-5), var(--c-color-indigo-5))', fontWeight: 700, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }"></c-highlight>
+<c-highlight :highlight="['highlighted', 'default']" :highlight-styles="{ backgroundImage: 'linear-gradient(45deg, var(--c-color-cyan-5), var(--c-color-indigo-5))', fontWeight: 700, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }">You can change styles of highlighted part if you do not like default styles</c-highlight>
+
+```vue
+<template>
+  <c-highlight :highlight="['highlighted', 'default']" :highlight-styles="{ backgroundImage: 'linear-gradient(45deg, var(--c-color-cyan-5), var(--c-color-indigo-5))', fontWeight: 700, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }">You can change styles of highlighted part if you do not like default styles</c-highlight>
+</template>
+```
 
 ## Text props
 
 Highlight is based on the [Text](./text) component - all Text props except `color` are available. Use the `color` prop to change the highlight background color, not the text color.
 
-<c-highlight c="var(--c-color-anchor)" children="CCK UI website" href="https://cck-ui.jackatlas.xyz" highlight="cck ui" tag="a" target="_blank" :case-insensitive="true" :fw="500" />
+<c-highlight c="var(--c-color-anchor)" href="https://cck-ui.jackatlas.xyz" highlight="cck ui" tag="a" target="_blank" :case-insensitive="true" :fw="500">CCK UI website</c-highlight>
 
 ## Props
 
