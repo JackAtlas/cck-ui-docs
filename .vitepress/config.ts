@@ -189,7 +189,8 @@ export default defineConfig({
             { text: 'Image', link: '/en-US/component/image' },
             { text: 'Indicator', link: '/en-US/component/indicator' },
             { text: 'Kbd', link: '/en-US/component/kbd' },
-            { text: 'NumberFormatter', link: '/en-US/component/number-formatter' }
+            { text: 'NumberFormatter', link: '/en-US/component/number-formatter' },
+            { text: 'OverflowList', link: '/en-US/component/overflow-list' }
           ]
         },
         {
