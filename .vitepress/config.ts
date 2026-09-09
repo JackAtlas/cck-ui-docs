@@ -190,7 +190,8 @@ export default defineConfig({
             { text: 'Indicator', link: '/en-US/component/indicator' },
             { text: 'Kbd', link: '/en-US/component/kbd' },
             { text: 'NumberFormatter', link: '/en-US/component/number-formatter' },
-            { text: 'OverflowList', link: '/en-US/component/overflow-list' }
+            { text: 'OverflowList', link: '/en-US/component/overflow-list' },
+            { text: 'RollingNumber', link: '/en-US/component/rolling-number' }
           ]
         },
         {
