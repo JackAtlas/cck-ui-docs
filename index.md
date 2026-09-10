@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: Components
       link: /en-US/component/get-started
+    - theme: alt
+      text: Hooks
+      link: /en-US/hooks/get-started
 
 features:
   - title: Dual-response system
