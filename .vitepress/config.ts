@@ -191,7 +191,8 @@ export default defineConfig({
             { text: 'Kbd', link: '/en-US/component/kbd' },
             { text: 'NumberFormatter', link: '/en-US/component/number-formatter' },
             { text: 'OverflowList', link: '/en-US/component/overflow-list' },
-            { text: 'RollingNumber', link: '/en-US/component/rolling-number' }
+            { text: 'RollingNumber', link: '/en-US/component/rolling-number' },
+            { text: 'Spoiler', link: '/en-US/component/spoiler' }
           ]
         },
         {
