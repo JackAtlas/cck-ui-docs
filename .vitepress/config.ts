@@ -105,13 +105,16 @@ export default defineConfig({
         {
           text: 'UI and Dom',
           items: [
+            { text: 'use-element-size', link: '/en-US/hooks/use-element-size' },
+            { text: 'use-resize-observer', link: '/en-US/hooks/use-resize-observer' },
             { text: 'use-window-scroll', link: '/en-US/hooks/use-window-scroll' }
           ]
         },
         {
           text: 'State management',
           items: [
-            { text: 'use-disclosure', link: '/en-US/hooks/use-disclosure' }
+            { text: 'use-disclosure', link: '/en-US/hooks/use-disclosure' },
+            { text: 'use-uncontrolled', link: '/en-US/hooks/use-uncontrolled' }
           ]
         },
         {
