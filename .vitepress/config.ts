@@ -198,6 +198,7 @@ export default defineConfig({
             { text: 'RollingNumber', link: '/en-US/component/rolling-number' },
             { text: 'Spoiler', link: '/en-US/component/spoiler' },
             { text: 'ThemeIcon', link: '/en-US/component/theme-icon' },
+            { text: 'Timeline', link: '/en-US/component/timeline' },
           ]
         },
         {
