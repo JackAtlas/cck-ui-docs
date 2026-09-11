@@ -196,7 +196,8 @@ export default defineConfig({
             { text: 'NumberFormatter', link: '/en-US/component/number-formatter' },
             { text: 'OverflowList', link: '/en-US/component/overflow-list' },
             { text: 'RollingNumber', link: '/en-US/component/rolling-number' },
-            { text: 'Spoiler', link: '/en-US/component/spoiler' }
+            { text: 'Spoiler', link: '/en-US/component/spoiler' },
+            { text: 'ThemeIcon', link: '/en-US/component/theme-icon' },
           ]
         },
         {
