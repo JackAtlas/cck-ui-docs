@@ -120,7 +120,8 @@ export default defineConfig({
         {
           text: 'Utilities',
           items: [
-            { text: 'use-clipboard', link: '/en-US/hooks/use-clipboard.md' }
+            { text: 'use-clipboard', link: '/en-US/hooks/use-clipboard.md' },
+            { text: 'use-timeout-fn', link: '/en-US/hooks/use-timeout-fn' }
           ]
         }
       ],
