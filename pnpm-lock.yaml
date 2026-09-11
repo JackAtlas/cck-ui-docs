@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@cck-ui/core':
-        specifier: ^0.45.0
-        version: 0.45.0(vue@3.5.42(typescript@7.0.2))
+        specifier: ^0.45.2
+        version: 0.45.2(vue@3.5.42(typescript@7.0.2))
       '@cck-ui/hooks':
-        specifier: ^0.45.0
-        version: 0.45.0(vue@3.5.42(typescript@7.0.2))
+        specifier: ^0.45.2
+        version: 0.45.2(vue@3.5.42(typescript@7.0.2))
       '@lucide/vue':
         specifier: ^1.43.0
         version: 1.43.0(vue@3.5.42(typescript@7.0.2))
@@ -62,18 +62,18 @@ packages:
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
-  '@cck-ui/core@0.45.0':
-    resolution: {integrity: sha512-gsntxJOtn0IQECkH2xYChD2a7ZHjMbAwCqrNNnSeh/C6S99URy1HHSZx2nKwfX464JBKUMZDTZTOJlvgZ8j8vg==}
+  '@cck-ui/core@0.45.2':
+    resolution: {integrity: sha512-Djsv4kcxbLkBHJl6CCK5xl82JQFUppT7Vv5rYB8xGS5b8HT6SiZLd8VZI5HfVbAPT8qAGriixMPyqx2LXlgDRg==}
     peerDependencies:
       vue: ^3.5.39
 
-  '@cck-ui/hooks@0.45.0':
-    resolution: {integrity: sha512-uVI+XVzwRO1UbODe/ZHMKK4sSSGt5vo20PV42DENJ8YYKRelWotrh0nuvkgkqTS3MKf0q/0QHpVggHKx4a0sXw==}
+  '@cck-ui/hooks@0.45.2':
+    resolution: {integrity: sha512-vxLyZ4iO7a2qeSj1wzLNRGLu7kiy1ARO/7lHXSYCfTKQtR59XwEFVC0qVATT/hJtIgy74V0TMNKgCliaA6wFZQ==}
     peerDependencies:
       vue: ^3.5.39
 
-  '@ctrl/tinycolor@4.2.0':
-    resolution: {integrity: sha512-kzyuwOAQnXJNLS9PSyrk0CWk35nWJW/zl/6KvnTBMFK65gm7U1/Z5BqjxeapjZCIhQcM/DsrEmcbRwDyXyXK4A==}
+  '@ctrl/tinycolor@4.2.1':
+    resolution: {integrity: sha512-Vh5uy9Y1JBMId6J1f68TMXnZrTCvNdo9Fu2k0d1YnJngR+sM5kWTKl441c/3TFs+cG0NWOjRWgQ/iaWhbYx+7A==}
     engines: {node: '>=14'}
 
   '@docsearch/css@4.6.3':
@@ -1131,19 +1131,19 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@cck-ui/core@0.45.0(vue@3.5.42(typescript@7.0.2))':
+  '@cck-ui/core@0.45.2(vue@3.5.42(typescript@7.0.2))':
     dependencies:
-      '@ctrl/tinycolor': 4.2.0
+      '@ctrl/tinycolor': 4.2.1
       '@vueuse/core': 14.4.0(vue@3.5.42(typescript@7.0.2))
       clsx: 2.1.1
       type-fest: 5.9.0
       vue: 3.5.42(typescript@7.0.2)
 
-  '@cck-ui/hooks@0.45.0(vue@3.5.42(typescript@7.0.2))':
+  '@cck-ui/hooks@0.45.2(vue@3.5.42(typescript@7.0.2))':
     dependencies:
       vue: 3.5.42(typescript@7.0.2)
 
-  '@ctrl/tinycolor@4.2.0': {}
+  '@ctrl/tinycolor@4.2.1': {}
 
   '@docsearch/css@4.6.3': {}
 
