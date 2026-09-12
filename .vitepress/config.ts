@@ -33,7 +33,8 @@ export default defineConfig({
             { text: 'CckConfigProvider', link: '/en-US/theming/cck-config-provider' },
             { text: 'Theme object', link: '/en-US/theming/theme-object' },
             { text: 'Colors', link: '/en-US/theming/colors' },
-            { text: 'Color schemes', link: '/en-US/theming/color-schemes' }
+            { text: 'Color schemes', link: '/en-US/theming/color-schemes' },
+            { text: 'Typography', link: '/en-US/theming/typography' },
           ]
         },
         {
@@ -68,7 +69,8 @@ export default defineConfig({
             { text: 'CckConfigProvider', link: '/en-US/theming/cck-config-provider' },
             { text: 'Theme object', link: '/en-US/theming/theme-object' },
             { text: 'Colors', link: '/en-US/theming/colors' },
-            { text: 'Color schemes', link: '/en-US/theming/color-schemes' }
+            { text: 'Color schemes', link: '/en-US/theming/color-schemes' },
+            { text: 'Typography', link: '/en-US/theming/typography' },
           ]
         },
         {
@@ -210,6 +212,7 @@ export default defineConfig({
             { text: 'List', link: '/en-US/component/list' },
             { text: 'Mark', link: '/en-US/component/mark' },
             { text: 'Text', link: '/en-US/component/text' },
+            { text: 'Title', link: '/en-US/component/title' },
             { text: 'Typography', link: '/en-US/component/typography' }
           ]
         },
