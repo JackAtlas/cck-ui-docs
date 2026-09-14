@@ -222,6 +222,7 @@ export default defineConfig({
           text: 'Miscellaneous',
           items: [
             { text: 'Box', link: '/en-US/component/box' },
+            { text: 'Collapse', link: '/en-US/component/collapse' },
             { text: 'Divider', link: '/en-US/component/divider' },
             { text: 'Paper', link: '/en-US/component/paper' },
             { text: 'Portal', link: '/en-US/component/portal' },
