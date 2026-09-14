@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@cck-ui/core':
-        specifier: ^0.50.0
-        version: 0.50.0(csstype@3.2.3)(vue@3.5.42(typescript@7.0.2))
+        specifier: ^0.51.2
+        version: 0.51.2(csstype@3.2.3)(vue@3.5.42(typescript@7.0.2))
       '@cck-ui/hooks':
-        specifier: ^0.50.0
-        version: 0.50.0(vue@3.5.42(typescript@7.0.2))
+        specifier: ^0.51.2
+        version: 0.51.2(vue@3.5.42(typescript@7.0.2))
       '@lucide/vue':
-        specifier: ^1.44.0
-        version: 1.44.0(vue@3.5.42(typescript@7.0.2))
+        specifier: ^1.45.0
+        version: 1.45.0(vue@3.5.42(typescript@7.0.2))
       '@vueuse/core':
         specifier: ^14.4.0
         version: 14.4.0(vue@3.5.42(typescript@7.0.2))
@@ -62,14 +62,14 @@ packages:
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
-  '@cck-ui/core@0.50.0':
-    resolution: {integrity: sha512-vDL+NHjbYusf2ME64EJmVBFrWFycrF3E6jzPH6ZwYosNRfDi8++ZSxmrySP10oNKnuSY5z/sa7kKg3V+PhFrNA==}
+  '@cck-ui/core@0.51.2':
+    resolution: {integrity: sha512-UjY5yBuoLLTrDXLWlH0GrvA3f8KbHE045kYddQ1cANFDL+eI6EoMJnZey7+692g6fELY/vi9RaECWGFI3xri8A==}
     peerDependencies:
       csstype: ^3.2.3
       vue: ^3.5.39
 
-  '@cck-ui/hooks@0.50.0':
-    resolution: {integrity: sha512-FgeBiyp9T287h/WZ9cyncf/RCXPuULSUsnko4qD95mVMCTwg/6qYrVjnAUotfn/DsRnpP3gyKKtEeBU1RFJmtw==}
+  '@cck-ui/hooks@0.51.2':
+    resolution: {integrity: sha512-YIKf0ka9sHZTSRWWynCvoF922JVQKtxXJjls7BUhQrRvvRV7E+cAy9ru4E+lfO2fOiIOcAfn1tOHzfLj0blIiw==}
     peerDependencies:
       vue: ^3.5.39
 
@@ -250,11 +250,6 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.6.0':
     resolution: {integrity: sha512-T7jf+5zgsZHwNJ4lvQ7/aezbyk0nNX+zJVWpmHA7VYsEx7a7qr5Rg5IbtJFqkgze5Y2sruq1RUY8Q837Od7iFw==}
-
-  '@lucide/vue@1.44.0':
-    resolution: {integrity: sha512-zPCTWyJnlhLPBqBSQ2EUQH03nmsJ/CVXb5Ht6k4Jk0Jn4+ojCqeRau86hGJt2Wv4FQmeoRHpIl1nadNGj7D6eA==}
-    peerDependencies:
-      vue: '>=3.0.1'
 
   '@lucide/vue@1.45.0':
     resolution: {integrity: sha512-tbMlusqK6brViI1xj8nsXAgNDyJOvNeOdOQlBI0hOWCAbnBrPRlanoQ6EygDEMv3dqwXfCZPb4a0/ImtI5KAmQ==}
@@ -1137,7 +1132,7 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@cck-ui/core@0.50.0(csstype@3.2.3)(vue@3.5.42(typescript@7.0.2))':
+  '@cck-ui/core@0.51.2(csstype@3.2.3)(vue@3.5.42(typescript@7.0.2))':
     dependencies:
       '@ctrl/tinycolor': 4.2.1
       '@lucide/vue': 1.45.0(vue@3.5.42(typescript@7.0.2))
@@ -1147,7 +1142,7 @@ snapshots:
       type-fest: 5.9.0
       vue: 3.5.42(typescript@7.0.2)
 
-  '@cck-ui/hooks@0.50.0(vue@3.5.42(typescript@7.0.2))':
+  '@cck-ui/hooks@0.51.2(vue@3.5.42(typescript@7.0.2))':
     dependencies:
       vue: 3.5.42(typescript@7.0.2)
 
@@ -1244,10 +1239,6 @@ snapshots:
   '@iconify/types@2.0.0': {}
 
   '@jridgewell/sourcemap-codec@1.6.0': {}
-
-  '@lucide/vue@1.44.0(vue@3.5.42(typescript@7.0.2))':
-    dependencies:
-      vue: 3.5.42(typescript@7.0.2)
 
   '@lucide/vue@1.45.0(vue@3.5.42(typescript@7.0.2))':
     dependencies:
