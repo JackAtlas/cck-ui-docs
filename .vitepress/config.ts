@@ -224,6 +224,7 @@ export default defineConfig({
             { text: 'Box', link: '/en-US/component/box' },
             { text: 'Collapse', link: '/en-US/component/collapse' },
             { text: 'Divider', link: '/en-US/component/divider' },
+            { text: 'Marquee', link: '/en-US/component/marquee' },
             { text: 'Paper', link: '/en-US/component/paper' },
             { text: 'Portal', link: '/en-US/component/portal' },
             { text: 'VisuallyHidden', link: '/en-US/component/visually-hidden' }
