@@ -1,0 +1,19 @@
+.scrollbar {
+  &,
+  &:hover {
+    background-color: light-dark(var(--c-color-gray-0), var(--c-color-dark-6));
+  }
+
+  &[data-orientation='vertical'] .thumb {
+    background-color: var(--c-color-red-6);
+  }
+
+  &[data-orientation='horizontal'] .thumb {
+    background-color: var(--c-color-blue-6);
+  }
+}
+
+.corner {
+  background-color: light-dark(var(--c-color-gray-0), var(--c-color-dark-6));
+  opacity: 1;
+}

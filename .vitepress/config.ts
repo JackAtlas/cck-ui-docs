@@ -227,6 +227,7 @@ export default defineConfig({
             { text: 'Marquee', link: '/en-US/component/marquee' },
             { text: 'Paper', link: '/en-US/component/paper' },
             { text: 'Portal', link: '/en-US/component/portal' },
+            { text: 'ScrollArea', link: '/en-US/component/scroll-area' },
             { text: 'VisuallyHidden', link: '/en-US/component/visually-hidden' }
           ]
         }
