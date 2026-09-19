@@ -228,6 +228,7 @@ export default defineConfig({
             { text: 'Paper', link: '/en-US/component/paper' },
             { text: 'Portal', link: '/en-US/component/portal' },
             { text: 'ScrollArea', link: '/en-US/component/scroll-area' },
+            { text: 'Scroller', link: '/en-US/component/scroller' },
             { text: 'VisuallyHidden', link: '/en-US/component/visually-hidden' }
           ]
         }
