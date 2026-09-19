@@ -110,6 +110,7 @@ export default defineConfig({
             { text: 'use-collapse', link: '/en-US/hooks/use-collapse' },
             { text: 'use-element-size', link: '/en-US/hooks/use-element-size' },
             { text: 'use-resize-observer', link: '/en-US/hooks/use-resize-observer' },
+            { text: 'use-scroller', link: '/en-US/hooks/use-scroller' },
             { text: 'use-window-scroll', link: '/en-US/hooks/use-window-scroll' }
           ]
         },
