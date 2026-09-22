@@ -1,0 +1,27 @@
+.root {
+  border-radius: var(--c-radius-sm);
+  background-color: light-dark(var(--c-color-gray-0), var(--c-color-dark-6));
+}
+
+.item {
+  background-color: light-dark(var(--c-color-gray-0), var(--c-color-dark-6));
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 0;
+  transition: transform 150ms ease;
+
+  &[data-active] {
+    transform: scale(1.03);
+    z-index: 1;
+    background-color: var(--c-color-body);
+    border-color: light-dark(var(--c-color-gray-2), var(--c-color-dark-4));
+    box-shadow: var(--c-shadow-md);
+    border-radius: var(--c-radius-md);
+  }
+}
+
+.chevron {
+  &[data-rotate] {
+    transform: rotate(-90deg);
+  }
+}

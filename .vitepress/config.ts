@@ -189,6 +189,7 @@ export default defineConfig({
         {
           text: 'Data display',
           items: [
+            { text: 'Accordion', link: '/en-US/component/accordion' },
             { text: 'Avatar', link: '/en-US/component/avatar' },
             { text: 'BackgroundImage', link: '/en-US/component/background-image' },
             { text: 'Badge', link: '/en-US/component/badge' },
