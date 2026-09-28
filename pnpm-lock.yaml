@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@cck-ui/core':
-        specifier: ^0.55.1
-        version: 0.55.1(csstype@3.2.3)(vue@3.5.43(typescript@7.0.2))
+        specifier: ^0.56.1
+        version: 0.56.1(@floating-ui/vue@2.0.1(vue@3.5.43(typescript@7.0.2)))(csstype@3.2.3)(vue@3.5.43(typescript@7.0.2))
       '@cck-ui/hooks':
-        specifier: ^0.55.1
-        version: 0.55.1(vue@3.5.43(typescript@7.0.2))
+        specifier: ^0.56.1
+        version: 0.56.1(vue@3.5.43(typescript@7.0.2))
       '@lucide/vue':
-        specifier: ^1.47.0
-        version: 1.47.0(vue@3.5.43(typescript@7.0.2))
+        specifier: ^1.48.0
+        version: 1.48.0(vue@3.5.43(typescript@7.0.2))
       '@vueuse/core':
         specifier: ^14.4.0
         version: 14.4.0(vue@3.5.43(typescript@7.0.2))
@@ -62,14 +62,15 @@ packages:
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
-  '@cck-ui/core@0.55.1':
-    resolution: {integrity: sha512-q4Ttv3bb/ltKO+en91KxzC9RWCQ+Hbz3S87UE+S2iMhVj5DVyAe+PrDW7U4A2rjmbbhAux6Dp7zslkqew/vWXg==}
+  '@cck-ui/core@0.56.1':
+    resolution: {integrity: sha512-HUFfBqvSr2Hs0WlTf0e05W5clAdWbh/xnpV45gCYJu3BOKmU6lU0ZJ/cwtHIoHpfhVJHeDsByQ1Athkd6oYkjA==}
     peerDependencies:
+      '@floating-ui/vue': ^2.0.1
       csstype: ^3.2.3
       vue: ^3.5.39
 
-  '@cck-ui/hooks@0.55.1':
-    resolution: {integrity: sha512-lm0zcilOui4DpTIHLfxUnQiE7bbb64ERhdb8oOC6H6flyBVd/QoxbOH3lWa+sFifQMB1wAKPtCBKVyBkvt1VOg==}
+  '@cck-ui/hooks@0.56.1':
+    resolution: {integrity: sha512-rIWG9fh21HSATpH++L8n8i2jLk4dzfdpd7iMsgn2YcOC7grYWc7ZG0sisPw74/XukP9G4QXC88DoCL2IUP9FWw==}
     peerDependencies:
       vue: ^3.5.39
 
@@ -242,6 +243,20 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@floating-ui/core@1.8.0':
+    resolution: {integrity: sha512-0CIZ5itps/8x7BG8dEIhs53BvCUH2PCoogtakwRTut+Arm58sJooJ0AuZhLw2HJYIR5cMLNPBSS728sPho2khQ==}
+
+  '@floating-ui/dom@1.8.0':
+    resolution: {integrity: sha512-yXSrzeHZBTZadLOlfyhCkJHNeLJnHRnRInwdZ40L7ZiaAtrBwoYlsDrX3v5zB1Utk7CLfzcOVnVVWoXEky7Ceg==}
+
+  '@floating-ui/utils@0.2.12':
+    resolution: {integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==}
+
+  '@floating-ui/vue@2.0.1':
+    resolution: {integrity: sha512-043dyEKD9TDSfz080YH2vobubgg+NIo/9Fw4RAl7sEMpD8Am1DNrrSTl/GpMBjyGHoD/FbJY2QLawY+HSQsEIA==}
+    peerDependencies:
+      vue: '>=3.3.0'
+
   '@iconify-json/simple-icons@1.2.97':
     resolution: {integrity: sha512-Z6PmM6jvWVU7rmLzqbxCLJA7SeqCnK6lMHXtjyzHPLZebwuoojBEcHHycppahDzEeN9xujRkrV5J8QpOhMyNrg==}
 
@@ -251,8 +266,8 @@ packages:
   '@jridgewell/sourcemap-codec@1.6.0':
     resolution: {integrity: sha512-T7jf+5zgsZHwNJ4lvQ7/aezbyk0nNX+zJVWpmHA7VYsEx7a7qr5Rg5IbtJFqkgze5Y2sruq1RUY8Q837Od7iFw==}
 
-  '@lucide/vue@1.47.0':
-    resolution: {integrity: sha512-S0/UX9zra4Z8xmqrA1MH5GiSKA8daAPFwkmORt/u+gUHAkYZoeOcr+DH3scZeyE9bdLWScGK+MJoDYi8rIU5Jg==}
+  '@lucide/vue@1.48.0':
+    resolution: {integrity: sha512-3/Nwx/RsqQ4ZrrSML1GNsSWCSDyLnBgoF/eEr1q9G6iZymn3+WKtzIj7Dbc/Nxrt9WOPuGrJ58S+CBiamK+36w==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -1123,17 +1138,18 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@cck-ui/core@0.55.1(csstype@3.2.3)(vue@3.5.43(typescript@7.0.2))':
+  '@cck-ui/core@0.56.1(@floating-ui/vue@2.0.1(vue@3.5.43(typescript@7.0.2)))(csstype@3.2.3)(vue@3.5.43(typescript@7.0.2))':
     dependencies:
       '@ctrl/tinycolor': 4.2.1
-      '@lucide/vue': 1.47.0(vue@3.5.43(typescript@7.0.2))
+      '@floating-ui/vue': 2.0.1(vue@3.5.43(typescript@7.0.2))
+      '@lucide/vue': 1.48.0(vue@3.5.43(typescript@7.0.2))
       '@vueuse/core': 14.4.0(vue@3.5.43(typescript@7.0.2))
       clsx: 2.1.1
       csstype: 3.2.3
       type-fest: 5.10.0
       vue: 3.5.43(typescript@7.0.2)
 
-  '@cck-ui/hooks@0.55.1(vue@3.5.43(typescript@7.0.2))':
+  '@cck-ui/hooks@0.56.1(vue@3.5.43(typescript@7.0.2))':
     dependencies:
       vue: 3.5.43(typescript@7.0.2)
 
@@ -1223,6 +1239,23 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
+  '@floating-ui/core@1.8.0':
+    dependencies:
+      '@floating-ui/utils': 0.2.12
+
+  '@floating-ui/dom@1.8.0':
+    dependencies:
+      '@floating-ui/core': 1.8.0
+      '@floating-ui/utils': 0.2.12
+
+  '@floating-ui/utils@0.2.12': {}
+
+  '@floating-ui/vue@2.0.1(vue@3.5.43(typescript@7.0.2))':
+    dependencies:
+      '@floating-ui/dom': 1.8.0
+      '@floating-ui/utils': 0.2.12
+      vue: 3.5.43(typescript@7.0.2)
+
   '@iconify-json/simple-icons@1.2.97':
     dependencies:
       '@iconify/types': 2.0.0
@@ -1231,7 +1264,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.6.0': {}
 
-  '@lucide/vue@1.47.0(vue@3.5.43(typescript@7.0.2))':
+  '@lucide/vue@1.48.0(vue@3.5.43(typescript@7.0.2))':
     dependencies:
       vue: 3.5.43(typescript@7.0.2)
 

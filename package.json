@@ -14,9 +14,9 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@cck-ui/core": "^0.55.1",
-    "@cck-ui/hooks": "^0.55.1",
-    "@lucide/vue": "^1.47.0",
+    "@cck-ui/core": "^0.56.1",
+    "@cck-ui/hooks": "^0.56.1",
+    "@lucide/vue": "^1.48.0",
     "@vueuse/core": "^14.4.0",
     "clsx": "^2.1.1",
     "es-toolkit": "^1.52.0",
