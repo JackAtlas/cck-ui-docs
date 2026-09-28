@@ -183,7 +183,8 @@ export default defineConfig({
         {
           text: 'Overlays',
           items: [
-            { text: 'Affix', link: '/en-US/component/affix' }
+            { text: 'Affix', link: '/en-US/component/affix' },
+            { text: 'Overlay', link: '/en-US/component/overlay' }
           ]
         },
         {
