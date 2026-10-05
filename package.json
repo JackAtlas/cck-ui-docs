@@ -14,9 +14,9 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@cck-ui/core": "^0.56.1",
-    "@cck-ui/hooks": "^0.56.1",
-    "@lucide/vue": "^1.48.0",
+    "@cck-ui/core": "^0.57.1",
+    "@cck-ui/hooks": "^0.57.1",
+    "@lucide/vue": "^1.51.0",
     "@vueuse/core": "^14.4.0",
     "clsx": "^2.1.1",
     "es-toolkit": "^1.52.0",
@@ -27,5 +27,6 @@
     "postcss-simple-vars": "^7.0.1",
     "vitepress": "2.0.0-alpha.17",
     "vue": "^3.5.43"
-  }
+  },
+  "packageManager": "pnpm@12.9.1+sha512.06b055fff5cd20dc12781de173ced3310ce0951bf2ec620211a16045d5444d5c93a663210764ef29a653a610459ba0368f0e74f84d80c54723cf95aae7bc0d6d"
 }
