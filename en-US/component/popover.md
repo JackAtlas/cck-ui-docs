@@ -348,7 +348,7 @@ Set the `withOverlay` prop to add an overlay behind the dropdown. You can pass a
 </template>
 ```
 
-## Hide detached (Bug)
+## Hide detached
 
 Use the `hideDetached` prop to configure how the dropdown behaves when the target element is hidden with styles (`display: none`, `visibility: hidden`, etc.), removed from the DOM, or when the target element is scrolled out of the viewport.
 
@@ -448,12 +448,12 @@ You can configure events that are used for click-outside detection with the `cli
 </template>
 ```
 
-## Initial focus (Bug)
+## Initial focus
 
 Popover uses the [FocusTrap](./focus-trap) component to manage focus. Add the `data-autofocus` attribute to the element that should receive initial focus:
 
 <c-center>
-  <c-popover>
+  <c-popover trap-focus>
     <c-popover-target>
       <c-button>Target</c-button>
     </c-popover-target>
